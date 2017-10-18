@@ -1,0 +1,7 @@
+RewriteEngine on
+Options +FollowSymLinks
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#Если это не файл и не дирректория, то перенаправляем на index.php
+RewriteRule . index.php
