@@ -1,0 +1,15 @@
+.products-wrapper
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    align-content: space-between
+
+@media only screen and (min-width: $small-screen-width)
+    .products-wrapper
+        display: flex
+        flex-flow: row wrap
+        justify-content: space-between
+        align-content: space-between
+        &_narrow
+            width: 848px / $max_inner_width *100vw
+            max-width: 848px

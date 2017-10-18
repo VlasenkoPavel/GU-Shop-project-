@@ -1,0 +1,53 @@
+.header
+	width: 100vw
+	display: flex
+	flex-flow: row
+	justify-content: flex-start
+	align-items: center
+	position: relative
+	&__search-block
+		position: relative
+		display: flex
+		flex-flow: row
+		justify-content: flex-start
+		align-items: center
+	&__drop-input-block
+		+hidden
+		display: flex
+		flex-flow: row nowrap
+		&:hover,
+		&:focus
+			left: $small-screen-header-height
+			opacity: 1
+			transition: opacity 0.3s
+	&__cart
+		display: none
+	&__drop-menu-account
+		display: none
+
+@media only screen and (min-width: $small-screen-width)
+	.header
+		width: 100%
+		display: flex
+		flex-flow: column
+		align-items: center
+		&__cart
+			display: block
+			margin:
+				top: 10px
+				left: auto
+		&__search-block
+			flex-flow: row-reverse
+			margin:
+				left: 37px
+		&__drop-input-block
+			position: static
+			opacity: 1
+			flex-flow: row-reverse
+		&__drop-menu-browse
+			position: static
+			opacity: 1
+		&__drop-menu-account
+			display: block
+			margin:
+				left: 25px

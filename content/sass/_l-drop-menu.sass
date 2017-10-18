@@ -1,0 +1,37 @@
+.l-drop-menu
+    &__item
+        list-style: none
+        position: relative
+        &_color,
+        &_size
+            a:focus ~[class*="l-drop-menu__sub-menu"]
+                left: 0px
+                top: 35px
+                opacity: 1
+                transition: opacity 0.5s
+        &_category
+            a:focus ~[class*="l-drop-menu__sub-menu"]
+                height: 443px
+                transition: height 0.5s
+        &_brend
+            a:focus ~[class*="l-drop-menu__sub-menu"]
+                height: 203px
+                transition: height 0.5s
+        &_designer
+            a:focus ~[class*="l-drop-menu__sub-menu"]
+                height: 443px
+                transition: height 0.5s
+
+    &__sub-menu
+        &_color,
+        &_size
+            +hidden
+            &:hover
+                left: 0px
+                top: 35px
+                opacity: 1
+                transition: opacity 0.5s
+        &_pushing
+            height: 0
+            overflow: hidden
+            transition: height 0.5s

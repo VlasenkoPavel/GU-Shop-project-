@@ -1,0 +1,37 @@
+.drop-menu-account
+	&__item
+		position: relative
+	&__item-link
+		width: 130px
+		height: 38px
+		display: flex
+		justify-content: center
+		align-items: center
+		text-decoration: none
+		background-color:  $red_shade_color
+		text-transform: capitalize
+		color:  $white_font_color
+		font:
+			size: 15px
+			weight: 400
+		transition: background-color 0.3s
+		&:focus ~[class*="drop-menu-account__sub-menu"]
+			left: 1px
+			top: 40px
+			opacity: 1
+			transition: opacity 0.3s
+		&:hover
+			background-color:  $middle_dark_grey_color
+			transition: background-color 0.3s
+	&__drop-down-arrow
+		padding-left: 10px
+		font:
+			size: 10px
+			weight: 400
+	&__sub-menu
+		+hidden
+		&:hover
+			left: 1px
+			top: 39px
+			opacity: 1
+			transition: opacity 0.5s

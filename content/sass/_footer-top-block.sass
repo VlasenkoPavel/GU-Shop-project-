@@ -1,0 +1,151 @@
+.footer-top-block
+    width: 100vw
+    height: 47vw
+    display: flex
+    flex-flow: column-reverse
+    justify-content: space-around
+    align-items: center
+    font-size: 2vw
+    background:
+        position: bottom center
+        image: url(../img/footer_banner.jpg)
+        repeat: no-repeat
+        size: contain
+    &__face-positioning-block
+        width: 100vw
+        height: 27vw
+        box-sizing: border-box
+        padding:
+            top: 13vw
+            bottom: 2vw
+        display: flex
+        flex-flow: column
+        justify-content: space-between
+        align-items: center
+        background:
+            image: url(../img/face.png)
+            repeat: no-repeat
+            size: 10vw
+            position: center 10%
+    &__paragraph
+        width: 70vw
+        font:
+            style: italic
+            size: 1em
+        line-height: 1em
+        text-align: center
+    &__person-name
+        width: 20vw
+        margin-top: 0.2em
+        text-transform: capitalize
+        font-style: normal
+        font-size: 1em
+        line-height: 1.2em
+        text-align: center
+        &:first-line
+            font-size: 1.2em
+            color: #f16d7f
+    &__bottom-markers
+        width: 40vw
+        display: flex
+        justify-content: space-between
+    &__marker
+        width: 5em
+        height: 0.5em
+        display: block
+        background-color: #d6d6d6
+        &:hover
+            background-color: #f16d7f
+    &__subscribe-positioning-block
+        width: 100vw
+        height: 20vw
+        box-sizing: border-box
+        display: flex
+        flex-flow: column
+        justify-content: center
+        align-items: center
+        background-color: #f1f1f1
+    &__subscribe
+        width: 50vw
+        text-transform: capitalize
+        font-size: 1em
+        font-weight: 400
+        line-height: 2em
+        text-align: center
+        &:first-line
+            font-size: 1.2em
+            font-weight: 400
+            line-height: 1.2em
+    &__input-block
+        margin-top: 1em
+        display: flex
+        align-items: flex-end
+@media only screen and (min-width: $small-screen-width)
+    .footer-top-block
+        @include associated-height(438px)
+        width: 100vw
+        max-width: 1600px
+        box-sizing: border-box
+        padding:
+            left: 230px / 1600px * 100%
+            right: 230px / 1600px * 100%
+        flex-flow: row nowrap
+        justify-content: center
+        align-items: center
+        font-size: inherit
+        background:
+            size: cover
+        &__face-positioning-block
+            width: auto
+            height: auto
+            //margin-top: 111px / 1600px * 100%
+            padding: 0
+            align-items: flex-start
+            background:
+                size: 83px
+                position: left top
+        &__paragraph
+            width: 386px
+            height: 68px
+            margin-left: 111px
+            font:
+                size: 16px
+            line-height: 24px
+            text-align: left
+        &__person-name
+            width: auto
+            margin:
+                top: 19px
+                left: 111px
+            font-size: 12px
+            line-height: 16px
+            text-align: left
+            &:first-line
+                font-size: 16px
+        &__bottom-markers
+            width: 140px
+            margin:
+                top: 40px
+                left: 111px
+        &__marker
+            width: 38px
+            height: 4px
+        &__subscribe-positioning-block
+            width: auto
+            height: auto
+            margin:
+                //top: 148px / 1600px * 100%
+                left: 165px / 1600px * 100%
+            justify-content: flex-start
+            background-color: transparent
+        &__subscribe
+            width: 277px
+            height: 41px
+            font-size: 14px
+            line-height: 34px
+            &::first-line
+                font-size: 24px
+                font-weight: 400
+                line-height: 24px
+        &__input-block
+            margin-top: 54px

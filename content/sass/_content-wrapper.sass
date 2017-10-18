@@ -1,0 +1,91 @@
+.content-wrapper
+    width: 100vw
+    &_header-top-wrapper
+        height: $small-screen-header-height
+        display: flex
+        flex-flow: row nowrap
+        justify-content: flex-start
+        align-items: center
+        z-index: 1
+    &__info
+        height: 472px / $main_width * 100vw
+        margin-top: 98px / $main_width * 100vw
+        padding:
+            left: 230px / $main_width * 100vw
+            right: 230px / $main_width * 100vw
+    &__products-section
+        margin: 98px / $main_width * 100vw
+            left: auto
+            right: auto
+        width: 1140px / $main_width * 100vw
+    &__footer-middle-block
+        width: 100vw
+        box-sizing: border-box
+        padding:
+            top: 10px
+            bottom: 10px
+        display: flex
+        flex-flow: row nowrap
+        justify-content: space-around
+        align-items: flex-start
+        background-color: #fbfbfb
+    &__copyright
+        height: 80px
+        padding-top: 5px
+        display: flex
+        flex-flow: column-reverse
+        justify-content: space-around
+        align-items: center
+        background-color: $copyright_background_color
+
+@media only screen and (min-width: $small-screen-width)
+    .content-wrapper
+        width: $inner_width
+        max-width: $max_inner_width
+        min-width: $min_inner_width
+        margin:
+            left: auto
+            right: auto
+        box-sizing: border-box
+        &_header-top-wrapper
+            height: 100px
+            //display: flex
+            //flex-flow: row nowrap
+            justify-content: flex-start
+            //align-items: center
+        &_home-page-slider
+            width: 100%
+        //&_main
+        //    flex: 1
+        //    background-color: $light_background_color
+        &__info
+            padding: 0
+            height: auto
+            margin-top: 98px
+        &__products-section
+            width: auto
+            margin-top: 100px
+        &__products-search-section
+            margin-top: 71px
+        &__bottom-banner
+            margin:
+                top: 113px
+                bottom: 97px
+        &__shipping-form
+            margin:
+                top: 63px
+                bottom: 79px
+        &__cart-table
+            margin-top: 86px
+        &__footer-middle-block
+            width: auto
+            @include associated-height(458px)
+            padding-top: 110px
+        &__copyright
+            @include associated-height(79px)
+            padding: 0
+            display: flex
+            flex-flow: row nowrap
+            justify-content: space-between
+            align-items: center
+            background-color: $copyright_background_color

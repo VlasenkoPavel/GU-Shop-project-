@@ -1,0 +1,73 @@
+.drop-menu-browse
+	z-index: 1
+	&__item
+		position: relative
+	&__item-link
+		width: 57px
+		height: $small-screen-header-height
+		display: flex
+		justify-content: center
+		align-items: center
+		text-decoration: none
+		border: 1px solid #e6e6e6
+		border-left: 0
+		background-color:  #f2f2f2
+		text-transform: capitalize
+		color:  #222222
+		font:
+			size: 12px
+			weight: 300
+		&:focus ~[class*="drop-menu-browse__sub-menu"]
+			left: -1 * ($small-screen-search-input-width + $small-screen-header-height)
+			top: $small-screen-header-height
+			opacity: 1
+			transition: opacity 0.3s
+		&:hover
+			background-color:  $red_shade_color
+			color: $white_font_color
+			transition: background-color 0.3s, color 0.3s
+	&__sub-menu
+		+hidden
+		&:hover
+			left: -1 * ($small-screen-search-input-width + $small-screen-header-height)
+			top: $small-screen-header-height
+			opacity: 1
+			transition: opacity 0.5s
+
+@media only screen and (min-width: $small-screen-width)
+	.drop-menu-browse
+		z-index: 1
+		&__item
+			position: relative
+		&__item-link
+			width: 87px
+			height: 38px
+			//display: flex
+			//justify-content: center
+			//align-items: center
+			//text-decoration: none
+			border: 1px solid #e6e6e6
+			border-right: 0
+			//background-color:  #f2f2f2
+			//text-transform: capitalize
+			//color:  #222222
+			font:
+				size: 14px
+				weight: 300
+			//transition: background-color 0.3s, color 0.3s
+			&:focus ~[class*="drop-menu-browse__sub-menu"]
+				left: 1px
+				top: 40px
+				//opacity: 1
+				//transition: opacity 0.3s
+			//&:hover
+			//	background-color:  $red_shade_color
+			//	color: $white_font_color
+			//	transition: background-color 0.3s, color 0.3s
+		&__sub-menu
+			//+hidden
+			&:hover
+				left: 1px
+				top: 39px
+				//opacity: 1
+				//transition: opacity 0.5s

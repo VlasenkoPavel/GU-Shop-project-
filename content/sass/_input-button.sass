@@ -1,0 +1,35 @@
+.input-button
+    display: flex
+    justify-content: center
+    align-items: center
+    text-decoration: none
+    text-transform: capitalize
+    color: white
+    &_red
+        background-color: $red_shade_color
+        color: $white_font_color
+        font:
+            size: 14px
+            weight: 400
+        transition: color 0.3s, background-color 0.3s
+        &:hover
+            color: black
+            transition: color 0.3s
+        &:active
+            background-color: #dbc36f
+            transition: background-color 0.1s
+    &_subscribe
+        @include right-radius(1.5em)
+        width: 11vw
+        height: 2em
+        border: 1px solid $red_shade_color
+        font-size: 1em
+
+@media only screen and (min-width: $small-screen-width)
+    .input-button
+        &_subscribe
+            @include right-radius(20px)
+            width: 104px
+            height: 46px
+            font-size: inherit
+

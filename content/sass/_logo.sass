@@ -1,0 +1,30 @@
+.logo
+	width: $small-screen-header-height
+	height: $small-screen-header-height
+	background:
+		image: url(../img/svg/logo.svg)
+		repeat: no-repeat
+		position: left
+		size: contain
+	z-index: inherit
+	&__text-block
+		display: none
+
+@media only screen and (min-width: $small-screen-width)
+	.logo
+		width: 100px
+		height: 51px
+		text-decoration: none
+		padding-left: 60px
+		&__text-block
+			display: block
+			text-align: right
+			color: $very_dark_font_color
+			text-transform: uppercase
+			font:
+				size: 27px
+				weight: 300
+			line-height: 51px
+		&__last-letter
+			color: $red_shade_color
+			font-weight: 900

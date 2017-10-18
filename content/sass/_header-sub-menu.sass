@@ -1,0 +1,53 @@
+.header-sub-menu
+    padding: 0 13px
+    border:
+        bottom-right-radius: 5px
+        bottom-left-radius: 5px
+    background-color:  #ffffff
+    &__item-heading
+        height: 40px
+        padding-left: 15px
+        display: flex
+        align-items: center
+        border-bottom: 1px solid #e8e8e8
+        text-transform: uppercase
+        color:  #232323
+        font:
+            size: 14px
+            weight: 400
+    &__item-link-img
+        position: relative
+        &_super-sale
+            display: block
+            width: 225px
+            height: 118px
+            background:
+                image: url(../img/super_sale_img.jpg)
+                size: contain
+                repeat: no-repeat
+        &:before
+            width: 71px
+            height: 45px
+            content: "super sale!"
+            position: absolute
+            top: 50px
+            left: 145px
+            text-transform: uppercase
+            color:  $white_font_color
+            font-size: 22px
+            font-weight: 900
+    &__item-link
+        //list-style: none
+        width: 262px
+        height: 30px
+        box-sizing: border-box
+        padding-left: 20px
+        display: flex
+        align-items: center
+        color:  #4f4f4f
+        text-decoration: none
+        font:
+            size: 14px
+            weight: 400
+        &:hover
+            color: $red_font_color

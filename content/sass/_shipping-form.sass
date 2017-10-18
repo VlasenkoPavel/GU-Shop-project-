@@ -1,0 +1,68 @@
+.shipping-form
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    //background-color: green
+    &__fieldset
+        width: 28%
+        display: flex
+        flex-flow: column
+        justify-content: space-between
+        align-items: flex-start
+        &_shipping-adress
+            +associated-height(268px)
+        &_coupon-discount
+            +associated-height(184px)
+        &_grand-total
+            +associated-height(214px)
+            box-sizing: border-box
+            padding: 41px / 1600px * 100%
+            background-color: $light_grey_color
+    &__fieldset-heading
+        text-transform: uppercase
+        color: $very_dark_font_color
+        font:
+            size: 16px
+            weight: 700
+    &__input-comment
+        color: $very_dark_font_color
+        font:
+            size: 13px
+            weight: 700
+    &__sub-total
+        width: 100%
+        text-align: right
+        text-transform: uppercase
+        font:
+            size: 11px
+            weight: 700
+    &__sub-total-prise
+        margin-left: 1em
+    &__grand-total
+        +associated-height(45px)
+        width: 100%
+        border-bottom: 1px solid $ultra_light_font_color
+        text-align: right
+        text-transform: uppercase
+        font:
+            size: 16px
+            weight: 700
+    &__grand-total-prise
+        color: $red_font_color
+        margin-left: 1em
+@media only screen and (max-width: 1100px)
+    .shipping-form
+        &__fieldset-heading
+            font:
+                size: 12px
+        &__input-comment
+            font:
+                size: 10px
+        &__sub-total
+            font:
+                size: 8px
+        &__grand-total
+            font:
+                size: 12px
+                weight: 700

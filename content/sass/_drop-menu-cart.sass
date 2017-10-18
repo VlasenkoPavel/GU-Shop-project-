@@ -1,0 +1,44 @@
+.drop-menu-cart
+	&__item
+		position: relative
+		&:before
+			width: 14px
+			height: 14px
+			position: absolute
+			left: 25px
+			content: "2"
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 50%
+			background-color: $red_shade_color
+			color: $white_font_color
+			position: absolute
+			font:
+				size: 10px
+				weight: 700
+	&__item-link
+		display: block
+		width: 32px
+		height: 34px
+		background:
+			image: url(../img/svg/cart.svg)
+			repeat: no-repeat
+			size: contain
+		border-bottom: 3px solid transparent
+		transition: border-color 0.3s
+		&:hover
+			border-bottom: 3px solid $red_shade_color
+			transition: border-color 0.3s
+		&:focus ~[class*="drop-menu-cart__sub-menu"]
+			left: 0px
+			top: 34px
+			opacity: 1
+			transition: opacity 0.3s
+	&__sub-menu
+		+hidden
+		&:hover
+			left: 0px
+			top: 34px
+			opacity: 1
+			transition: opacity 0.5s

@@ -1,0 +1,47 @@
+.c-checkout-menu
+    counter-reset: num
+    &__item-link
+        width: 100%
+        min-height: 72px
+        box-sizing: border-box
+        padding-top: 31px
+        display: flex
+        flex-flow: row wrap
+        align-items: flex-start
+        text-decoration: none
+        text-transform: uppercase
+        color: $very_dark_font_color
+        font-size: 16px
+        font-weight: 700
+        &:before
+            margin-right: 10px
+            counter-increment: num
+            content: counter(num, decimal-leading-zero)"."
+    &__sub-menu
+        width: 100%
+        padding-left: 35px
+        font-size: 13px
+        font-weight: 400
+        overflow: hidden
+        border-bottom: 1px solid #e1e1e1
+        transition: font-size 0.2s, height 0.5s
+        &_shipping-form
+            height: 483px
+            .button_dropped
+                border: 1px solid $grey_border_color
+            .fieldset-for-registed__input-mail,
+            .fieldset-for-registed__input-password
+                border: 1px solid $grey_border_color
+            .input-tips
+                font-size: 12px
+                color: $very_dark_font_color
+        &_billing-info
+            height: 100px
+        &_shipping-info
+            height: 100px
+        &_shipping-method
+            height: 100px
+        &_payment-method
+            height: 100px
+        &_order-review
+            height: 100px

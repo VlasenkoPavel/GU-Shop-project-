@@ -1,0 +1,38 @@
+.brand-full-name
+    position: relative
+    text-transform: uppercase
+    color: $very_dark_font_color
+    font:
+        size: 0.03 * 100vw
+        weight: 900
+    line-height: 1.2em
+    &__last-word
+        color: $red_font_color
+    &:before
+        position: absolute
+        top: 0.0015 * 100vw
+        left: -0.02 * 100vw
+        content: ""
+        width: 0.008 * 100vw
+        height: 0.062 * 100vw
+        display: block
+        background-color: #f16d7f
+    &:first-line
+        font-size: 1.4em
+
+@media only screen and (min-width: $small-screen-width)
+    .brand-full-name
+        font:
+            size: 40px
+            weight: 900
+        line-height: 50px
+        &__last-word
+            color: $red_font_color
+        &:before
+            left: -22px
+            top: 4px
+            width: 12px
+            height: 86px
+            display: block
+        &:first-line
+            font-size: 60px

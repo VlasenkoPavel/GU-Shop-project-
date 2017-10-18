@@ -1,0 +1,47 @@
+.c-color-select
+    position: relative
+    text-align: left
+    &:before
+        content: "choose color"
+        text-transform: uppercase
+        position: absolute
+        top: -16px
+        color: #2f2f2f
+        font-size: 14px
+        font-weight: 700
+    &__item-link,
+    &__sub-menu-item-link
+        width: 144px
+        height: 35px
+        display: block
+        position: relative
+        padding-left: 40px
+        box-sizing: border-box
+        border: 1px solid black
+        background-color: #fff
+        text-decoration: none
+        text-transform: capitalize
+        color:  #bcbcbc
+        font:
+            size: 13px
+            weight: 400
+        line-height: 35px
+        &:before
+            content: ""
+            display: block
+            position: absolute
+            top: 12px
+            left: 17px
+            width: 10px
+            height: 10px
+            background-color: #ef5b70
+        &:hover
+            color: #ef5b70
+    &__sub-menu-item-link
+        border-top: 0
+        &_green
+            &:before
+                background-color: green
+        &_blue
+            &:before
+                background-color: blue

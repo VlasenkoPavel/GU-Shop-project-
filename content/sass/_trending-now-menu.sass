@@ -1,0 +1,27 @@
+.trending-now-menu
+    height: 40px
+    display: flex
+    flex-flow: row wrap
+    align-content: space-between
+    &__item
+        text-decoration: none
+        color: $dark_font_color
+        text-transform: capitalize
+        border-right: 1px solid $dark_font_color
+        padding:
+            left: 1em
+            right: 1em
+        font:
+            size: 14px
+            weight: 700
+        &:hover
+            color: $red_font_color
+        &:active
+            color: $dark_font_color
+    &__item:nth-of-type(1),
+    &__item:nth-of-type(4)
+        padding:
+            left: 0em
+    &__item:nth-of-type(3),
+    &__item:nth-of-type(6)
+        border-right: 0

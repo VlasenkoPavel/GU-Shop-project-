@@ -1,0 +1,54 @@
+$small-screen-width: 800px
+$small-screen-header-height: 25px
+$small-screen-search-input-width: 150px
+
+$main_width: 1600px
+
+$max_inner_width: 1140px
+$min_inner_width: 800px
+
+$inner_width: 1140px / 1600px * 100vw
+
+$product_link_max_height: 364px
+$product_link_max_width: 263px
+
+$light_background_color: #fbfbfb
+$copyright_background_color: #e6e6e6
+
+$very_dark_font_color: #222222
+$dark_font_color: #4a494a
+$middle_dark_font_color: #575757
+$light_font_color: #6f6e6e
+$very_light_font_color: #898989
+$ultra_light_font_color: #b3b2b2
+$white_font_color: #ffffff
+$red_font_color: #f16d7f
+$bright_red_font_color: #ff0d0d
+
+$small_size_product_color: #f8f8f8
+
+$grey_border_color:  #e1e1e1
+
+$red_shade_color:  #f16d7f
+$dark_grey_color: #4a494a
+$middle_dark_grey_color: #6f6e6e
+$light_grey_color: #f7f7f7
+
+@mixin associated-height($h)
+    height: $h / 1140px * $inner_width
+    max-height: $h
+    min-height: $h / 1140px * $min_inner_width
+
+@mixin right-radius($r)
+    border-top-right-radius: $r
+    border-bottom-right-radius: $r
+
+@mixin left-radius($r)
+    border-top-left-radius: $r
+    border-bottom-left-radius: $r
+
+=hidden
+    left: -9999px
+    opacity: 0
+    position: absolute
+    z-index: 3

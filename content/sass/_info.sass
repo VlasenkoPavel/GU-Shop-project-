@@ -1,0 +1,98 @@
+.info
+    height: 472px / 1600px * 100vw
+    background-color: red
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    align-content: space-between
+    background-color: $light_background_color
+    &__picture
+        width: 560px / $max_inner_width * 100%
+        box-sizing: border-box
+        padding-top: 3vw
+        display: flex
+        justify-content: center
+        align-items: flex-start
+        background-size: 100%
+        text-decoration: none
+        position: relative
+        background-repeat: no-repeat
+        &_picture-1
+            width: 360px / $main_width * 100vw
+            height: 260px / $main_width * 100vw
+            background-image: url(../img/info_small_img1.jpg)
+        &_picture-2
+            width: 360px / $main_width * 100vw
+            height: 260px / $main_width * 100vw
+            background-image: url(../img/info_small_img2.jpg)
+        &_picture-3
+            width: 360px / $main_width * 100vw
+            height: 260px / $main_width * 100vw
+            background-image: url(../img/info_small_img3.jpg)
+        &_picture-4
+            width: 100%
+            height: 180px / $main_width * 100vw
+            background-image: url(../img/info_small_img4.jpg)
+    &__text
+        text-align: center
+        position: relative
+        text-transform: uppercase
+        color: $red_font_color
+        font:
+            size: 0.03 * 100vw
+            weight: 900
+        &:first-line
+            color: $white_font_color
+            font-size: 0.6em
+        &:before
+            content: ""
+            width: 60%
+            height: 1px
+            position: absolute
+            top: 120%
+            left: 20%
+            background-color: #ffffff
+
+@media only screen and (min-width: $small-screen-width)
+    .info
+        @include associated-height(820px)
+        display: flex
+        flex-flow: column wrap
+        justify-content: space-between
+        align-content: space-between
+        background-color: $light_background_color
+        &__picture
+            width: 560px / $max_inner_width * 100%
+            padding: 0
+            background-size: 100%
+            position: relative
+            justify-content: flex-start
+            background-repeat: no-repeat
+            &_picture-1
+                height: 66%
+                background-image: url(../img/picture_info_1.jpg)
+            &_picture-2
+                height: 32%
+                background-image: url(../img/picture_info_2.jpg)
+            &_picture-3
+                height: 32%
+                background-image: url(../img/picture_info_3.jpg)
+            &_picture-4
+                height: 66%
+                background-image: url(../img/picture_info_4.jpg)
+        &__text
+            text-align: left
+            max-width: 138px
+            margin-top: 26px
+            padding: 16px 20px
+            text-transform: uppercase
+            color: $red_font_color
+            font-size: 30px
+            font-weight: 900
+            background-color: $light_background_color
+            &:first-line
+                color: black
+                font-size: 18px
+                font-weight: 900
+            &:before
+                display: none

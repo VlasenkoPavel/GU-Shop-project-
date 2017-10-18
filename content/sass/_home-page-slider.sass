@@ -1,0 +1,30 @@
+.home-page-slider
+    width: 100vw
+    height: 764px / $main_width * 100vw
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    background:
+        image: url(../img/Header_small_slider_img.jpg)
+        color:  #f1e4e6
+        repeat: no-repeat
+        position: left
+        size: contain
+    &__brand-full-name
+        margin:
+            right: 20px
+@media only screen and (min-width: $small-screen-width)
+    .home-page-slider
+        @include associated-height(615px)
+        justify-content: flex-start
+        align-items: flex-start
+        width: 100%
+        padding:
+            top: 226px / 1140px * 100%
+            left: 22px
+        background:
+            image: url(../img/top_banner2.jpg)
+            color: #e8e8e8
+            repeat: no-repeat
+            position: right
+            size: contain

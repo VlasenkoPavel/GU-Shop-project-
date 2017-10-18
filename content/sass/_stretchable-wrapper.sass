@@ -1,0 +1,26 @@
+.stretchable-wrapper
+    width: 100vw
+    &_header-top
+        width: 2 * 25px
+    &_new-arrivals
+        background-color: #f8f3f4
+        display: flex
+        justify-content: center
+    &_home-page-slider
+        margin-top: -1 * $small-screen-header-height
+        background-color: #e8e8e8
+    &_new-arrivals-slider
+        background-color: $light_grey_color
+    &_footer-middle-block
+        background-color: $light_background_color
+    &_copyright
+        background-color: $copyright_background_color
+
+@media only screen and (min-width: $small-screen-width)
+    .stretchable-wrapper
+        &_header-top
+            width: 100vw
+            border-bottom: 1px solid #ececec
+            background-color: $light_background_color
+        &_home-page-slider
+            margin-top: 0

@@ -1,0 +1,41 @@
+.home-page-signboard
+    @extend .content-wrapper
+    height: 615px
+    display: flex
+    background:
+        image: url(../img/top_banner2.jpg)
+        color: #e8e8e8
+        repeat: no-repeat
+        position: right
+        size: contain
+
+.home-page-signboard h1
+    width: 485px / $max_inner_width *100%
+    height: 92px
+    margin:
+        top: 226px / $max_inner_width *100%
+        left: 22px
+    position: relative
+    text-transform: uppercase
+    color: $very_dark_font_color
+    font:
+        size: 40px
+        weight: 900
+    line-height: 50px
+
+.home-page-signboard h1 b
+    color: $red_font_color
+
+.home-page-signboard h1:before
+    position: absolute
+    left: -22px
+    top: 4px
+    content: ""
+    width: 12px
+    height: 86px
+    display: block
+    background-color: #f16d7f
+
+
+.home-page-signboard h1:first-line
+    font-size: 60px

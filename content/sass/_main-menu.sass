@@ -1,0 +1,105 @@
+.main-menu
+	display: none
+	position: absolute
+	z-index: 3
+	&__ul
+		display: flex
+		flex-flow: column
+		justify-content: flex-start
+		align-items: center
+		//&__item
+		//	position: relative
+	&__item-link
+		height: 1.5 * $small-screen-header-height
+		width: 50vw
+		display: block
+		padding: 0 10px
+		box-sizing: border-box
+		//border-bottom: 3px solid transparent
+		text-decoration: none
+		text-transform: uppercase
+		color: #222222
+		background-color: #fbfbfb
+		font:
+			size: 16px
+			weight: 700
+		line-height: $small-screen-header-height
+	//		&:hover
+	//			border-bottom: 3px solid $red_shade_color
+	//		&:focus ~[class*="main-menu__sub-menu"]
+	//			left: 0px
+	//			top: 42px
+	//			opacity: 1
+	//			transition: opacity 0.2s
+	//	&__sub-menu
+	//		+hidden
+	//		&:hover
+	//			left: 0px
+	//			top: 42px
+	//			opacity: 1
+	//			transition: opacity 0.3s
+	&__sub-menu
+		display: none
+	&__main-button
+		margin:
+			left: auto
+			right: 10px
+		color: black
+		text-decoration: none
+		font:
+			size: 16px
+			weight: 900
+		z-index: 1
+		&:focus ~[class="main-menu"]
+			display: block
+			right: 0
+			top: $small-screen-header-height
+
+@media only screen and (min-width: $small-screen-width)
+	.main-menu
+		position: static
+		display: block
+		width: 680px
+		margin: 0 auto
+		z-index: 0
+		&__main-button
+			display: none
+		&__ul
+			box-sizing: border-box
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			align-items: center
+		&__item
+			position: relative
+		&__item-link
+			height: 50px
+			width: auto
+			display: block
+			padding: 0 10px
+			box-sizing: border-box
+			border-bottom: 3px solid transparent
+			text-decoration: none
+			text-transform: uppercase
+			color: #222222
+			background-color: transparent
+			font:
+				size: 16px
+				weight: 700
+			line-height: 46px
+			&:hover
+				border-bottom: 3px solid $red_shade_color
+			&:focus ~[class*="main-menu__sub-menu"]
+				left: 0px
+				top: 42px
+				opacity: 1
+				transition: opacity 0.2s
+		&__sub-menu
+			display: block
+			+hidden
+			&:hover
+				left: 0px
+				top: 42px
+				opacity: 1
+				transition: opacity 0.3s
+

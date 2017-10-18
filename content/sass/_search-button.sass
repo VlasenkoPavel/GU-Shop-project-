@@ -1,0 +1,39 @@
+@media only screen and (max-width: $small-screen-width)
+.search-button
+    width: $small-screen-header-height
+    height: $small-screen-header-height
+    background:
+        size: 50%
+        image: url(../img/svg/find.svg)
+        repeat: no-repeat
+        position: center
+    z-index: inherit
+    &:focus ~[class*="header__drop-input-block"]
+        left: $small-screen-header-height
+        opacity: 1
+        transition: opacity 0.3s
+
+@media only screen and (min-width: $small-screen-width)
+    .search-button
+        width: 38px
+        height: 38px
+        border:
+            style: solid
+            width: 1px
+            color: #e6e6e6
+            bottom-right-radius: 3px
+            top-right-radius: 3px
+            left-width: 0
+        background:
+            size: 20px
+            color: #f2f2f2
+        &:focus ~[class*="search-input"]
+            left: 1px
+            top: 40px
+            opacity: 1
+            z-index: 1
+            transition: opacity 0.3s
+        &:hover
+            background-color:  $red_shade_color
+            color: $white_font_color
+            transition: background-color 0.3s, color 0.3s

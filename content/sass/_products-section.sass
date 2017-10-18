@@ -1,0 +1,18 @@
+.products-section
+    display: flex
+    flex-flow: column nowrap
+    align-content: center
+    &__products-wrapper
+        margin-top: 90px / $main_width * 100vw
+    &__button
+        margin:
+            top: 69px / $main_width * 100vw
+            left: auto
+            right: auto
+@media only screen and (min-width: $small-screen-width)
+    .products-section
+        &__products-wrapper
+            margin-top: 59px
+        &__button
+            margin:
+                top: 55px

@@ -1,0 +1,62 @@
+.products-paging
+    height: 44px
+    margin-bottom: 60px
+    display: flex
+    justify-content: flex-start
+
+    &__item
+        width: 25px
+        height: 44px
+        color: $dark_font_color
+        display: flex
+        align-items: center
+        justify-content: center
+        text-decoration: none
+        text-align: center
+        font:
+            size: 16px
+            weight: 400
+        line-height: 40px
+        &:hover
+            color: $red_font_color
+        &:focus
+            color: $red_font_color
+
+    &__inner-item-wrapper
+        position: relative
+
+    &__sub-wrapper-caller
+        width: 25px
+        height: 44px
+        margin-right: 5px
+        color: $dark_font_color
+        display: flex
+        align-items: center
+        justify-content: center
+        text-decoration: none
+        text-align: center
+        font:
+            size: 16px
+            weight: 400
+        line-height: 40px
+        &:hover
+            color: $red_font_color
+        &:focus
+            color: $red_font_color
+        &:focus ~[class*="products-paging__sub-wrapper"]
+            width: 300px
+            flex-flow: row wrap
+            transition: width 0.5s
+
+    &__sub-wrapper
+        position: absolute
+        display: flex
+        overflow: hidden
+        height: 44px
+        width: 0
+        justify-content: flex-start
+        flex-flow:  row nowrap
+        &:hover
+            width: 300px
+            flex-flow: row wrap
+            transition: width 0.5s

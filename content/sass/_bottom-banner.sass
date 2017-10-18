@@ -1,0 +1,134 @@
+.bottom-banner
+    height: 15em
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: flex-start
+    color: #fbfbfb
+    text-decoration: none
+    font-size: 0.02 * 100vw
+    background:
+        color: black
+    &__main-heading
+        display: none
+    &__inner-wrapper
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+    &__heading
+        height: 3em
+        background:
+            position: top center
+            repeat: no-repeat
+            size: 2em
+        display: flex
+        justify-content: center
+        align-items: flex-end
+        font-size: 0.03 * 100vw
+        weight: 300
+        &_delivery
+            background:
+                image: url(../img/svg/Free_Delivery.svg)
+        &_sales
+            background:
+                size: 1.7em
+                image: url(../img/svg/Sales_&_discounts.svg)
+        &_assurance
+            background:
+                image: url(../img/svg/Quality_assuransce.svg)
+    &__small-text
+        text-align: center
+        width: 219px / 335px * 100%
+        margin:
+            top: 5px
+            left: auto
+            right: auto
+        font-size: 0.7em
+        line-height: 1.5em
+
+@media only screen and (min-width: $small-screen-width)
+    .bottom-banner
+        @include associated-height(529px)
+        background:
+            image: url(../img/bottom_banner.jpg)
+            size: contain
+            repeat: no-repeat
+        &__main-heading
+            display: block
+            width: 293px
+            height: 78px
+            margin:
+                top: 146px / 1140px * 100%
+                left: 39px / 1140px * 100%
+            color: $white_font_color
+            font-size: 32px
+            font-weight: 700
+            line-height: 40px
+        &__main-heading-big-text
+            color: $white_font_color
+            font-size: 54px
+            font-weight: 700
+        &__main-heading-red-text
+            color: $red_font_color
+        &__inner-wrapper
+            width: 335px / 1140px * 100%
+            flex-flow: column
+            justify-content: space-between
+            align-items: flex-start
+        &__heading-wrapper
+            &:last-child
+                margin-bottom: 80px
+        &__heading
+            max-height: 38px
+            padding-left: 78px / 335px * 100%
+            background:
+                position: left
+                size: contain
+            justify-content: flex-start
+            align-items: center
+            font-size: 0.012 * 100vw
+            &_delivery
+                height: 2vw
+                max-height: 42px
+                margin:
+                    top: 15%
+                background:
+                    image: url(../img/svg/Free_Delivery.svg)
+            &_sales
+                height: 2.2vw
+                max-height: 46px
+                background:
+                    image: url(../img/svg/Sales_&_discounts.svg)
+            &_assurance
+                height: 2vw
+                max-height: 42px
+                background:
+                    image: url(../img/svg/Quality_assuransce.svg)
+        &__small-text
+            text-align: left
+            width: 15vw
+            max-width: 250px
+            margin:
+                top: 5px
+                left: 78px / 335px * 100%
+                bottom: 12%
+            font:
+                size: 0.45em
+                weight: 300
+            line-height: 2em
+        &__small-text:last-of-type
+            margin-bottom: 0
+
+@media only screen and (min-width: 1800px)
+    .bottom-banner
+        &__heading
+            font-size: 0.01 * 100vw
+            padding-left: 30%
+        &__small-text
+            margin-left:  30%
+            font:
+                size: 0.36em
+                weight: 300
+            line-height: 24px
