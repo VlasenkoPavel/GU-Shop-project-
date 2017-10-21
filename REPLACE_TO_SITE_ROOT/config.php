@@ -2,8 +2,9 @@
 date_default_timezone_set('Europe/Moscow');
 
 define( 'SITE_ROOT', __DIR__. DIRECTORY_SEPARATOR);
-define( 'CORE_ROOT', SITE_ROOT . 'core' . DIRECTORY_SEPARATOR );
-define( 'PUBLIC_DIR', SITE_ROOT . 'public' . DIRECTORY_SEPARATOR );
+define( 'PUBLIC_DIR', SITE_ROOT . 'GU-Shop-Reposit' . DIRECTORY_SEPARATOR );
+define( 'CORE_ROOT', PUBLIC_DIR . 'core' . DIRECTORY_SEPARATOR );
+define( 'CNT_DIR', PUBLIC_DIR . 'controllers' . DIRECTORY_SEPARATOR );
 define( 'LIB_DIR', PUBLIC_DIR . 'components' . DIRECTORY_SEPARATOR );
 define( 'VIEWS_DIR', PUBLIC_DIR . 'views' . DIRECTORY_SEPARATOR );
 define( 'LAYOUTS_DIR', VIEWS_DIR . 'layouts' . DIRECTORY_SEPARATOR );
@@ -16,7 +17,6 @@ define( 'PROD_IMG', 'http://localhost/content/img/');
 define( 'PROD_IMG_CATALOG', 'http://localhost/content/img/img_products/');
 define( 'JS_CATALOG', 'http://localhost/scripts/');
 
-define( 'CNT_DIR', SITE_ROOT . 'controllers' . DIRECTORY_SEPARATOR );
 
 
 

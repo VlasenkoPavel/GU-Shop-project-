@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <?php
-        $layout = VIEWS_DIR . '__head.php';
+        $layout = VIEWS_DIR . '__head-home.php';
         require_once $layout;
     ?>
     <title>Shop home</title>
