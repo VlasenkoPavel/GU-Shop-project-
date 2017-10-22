@@ -328,26 +328,26 @@ body {
       top: 39px; } }
 .drop-menu-cart__item {
   position: relative; }
-  .drop-menu-cart__item:before {
-    width: 14px;
-    height: 14px;
-    position: absolute;
-    left: 25px;
-    content: "2";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: #f16d7f;
-    color: #ffffff;
-    position: absolute;
-    font-size: 10px;
-    font-weight: 700; }
+.drop-menu-cart__count {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  left: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #f16d7f;
+  color: #ffffff;
+  position: absolute;
+  font-size: 10px;
+  font-weight: 700;
+  z-index: 2; }
 .drop-menu-cart__item-link {
   display: block;
   width: 32px;
   height: 34px;
-  background-image: url(../img/svg/cart.svg);
+  background-image: url("../img/svg/cart.svg");
   background-repeat: no-repeat;
   background-size: contain;
   border-bottom: 3px solid transparent;

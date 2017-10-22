@@ -38,6 +38,7 @@
             </div>
             <ul class="header__cart">
                 <li id="cart_wrapper" class="drop-menu-cart__item">
+                    <div class="drop-menu-cart__count">0</div>
                     <a href="#" class="drop-menu-cart__item-link"></a>
                 </li>
             </ul>

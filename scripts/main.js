@@ -1,6 +1,9 @@
 $(document).ready(function () {
-    let cart = new Cart('cart');
-    cart.render('#cart_wrapper');
+    let cart = new Cart();
+    cart.renderCart('#cart_wrapper');
+    cart.getData();
+    cart.refresh();
+
 
     // $('.buyme').on('click', function () {
     //     //var idProduct = parseInt($(this).attr('id').split('_')[1]);

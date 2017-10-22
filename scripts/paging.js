@@ -183,22 +183,22 @@ class ajaxPageVisualizer
     }
 }
 
-function changeClassName(name, newName, num)
-{
-    let elem = document.getElementsByClassName(name)[num];
-    elem.className = newName;
-    // console.log(newName);
-}
-
-function changePage()
-{
-    let page = document.querySelector('[class*="button_paging-red"]');
-    if (page) {
-        page.className = 'button button_paging';
-    }
-    let newPage = document.activeElement;
-    if (newPage) {
-        newPage.className = 'button button_paging-red';
-        // console.log(newPage);
-    }
-}
+// function changeClassName(name, newName, num)
+// {
+//     let elem = document.getElementsByClassName(name)[num];
+//     elem.className = newName;
+//     // console.log(newName);
+// }
+//
+// function changePage()
+// {
+//     let page = document.querySelector('[class*="button_paging-red"]');
+//     if (page) {
+//         page.className = 'button button_paging';
+//     }
+//     let newPage = document.activeElement;
+//     if (newPage) {
+//         newPage.className = 'button button_paging-red';
+//         // console.log(newPage);
+//     }
+// }

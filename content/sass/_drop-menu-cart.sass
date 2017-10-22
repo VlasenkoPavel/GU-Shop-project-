@@ -1,28 +1,28 @@
 .drop-menu-cart
 	&__item
 		position: relative
-		&:before
-			width: 14px
-			height: 14px
-			position: absolute
-			left: 25px
-			content: "2"
-			display: flex
-			justify-content: center
-			align-items: center
-			border-radius: 50%
-			background-color: $red_shade_color
-			color: $white_font_color
-			position: absolute
-			font:
-				size: 10px
-				weight: 700
+	&__count
+		width: 14px
+		height: 14px
+		position: absolute
+		left: 25px
+		display: flex
+		justify-content: center
+		align-items: center
+		border-radius: 50%
+		background-color: $red_shade_color
+		color: $white_font_color
+		position: absolute
+		font:
+			size: 10px
+			weight: 700
+		z-index: 2
 	&__item-link
 		display: block
 		width: 32px
 		height: 34px
 		background:
-			image: url(../img/svg/cart.svg)
+			image: url('../img/svg/cart.svg')
 			repeat: no-repeat
 			size: contain
 		border-bottom: 3px solid transparent
