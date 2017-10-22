@@ -6,7 +6,7 @@ return [
     'dbname' => 'shop_gu_project',
     'charset' => 'utf8',
     'user' => 'root',
-    'pass' => 'ac3102'
+    'pass' => 'password'
 ];
 
 
