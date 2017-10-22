@@ -6,16 +6,16 @@ use components\Product;
 
 class OrderController extends \core\Controller
 {
-    private $openOrderId;
+//    private $openOrderId;
+//
+//    public function actionAddProduct($product_id, $size_id, $color_id)
+//    {
+//
+//    }
 
-    public function actionAddProduct($product_id, $size_id, $color_id)
-    {
-
-    }
-
-    public function __construct($user_id)
-    {
-        $user_id = Application::$app->user->getId();
+//    public function __construct($user_id)
+//    {
+//        $user_id = Application::$app->user->getId();
 //        $openOrderId = $this->callOpenOrderId($user_id);
 //
 //        if($openOrderId) {
@@ -34,25 +34,40 @@ class OrderController extends \core\Controller
 //                }
 //            }
 //        }
-
-    }
+//
+//    }
 
     public function actionGetOpenOrder()
     {
-        echo ("выводим карзину пользователя с ID: " . Application::$app->user->getId());
-    }
-
-    private function callOpenOrderId($user_id) {
+        $cart = [];
+        $user_id = Application::$app->user->getId();
         $order = Application::$app->db->trySql('
-            SELECT id FROM orders 
+            SELECT orders.id, orders.total_cost FROM orders
             INNER JOIN order_statuses on orders.status_id = order_statuses.id
             WHERE order_statuses.status = "open" AND orders.user_id = "' . $user_id . '"');
-
-        if($order) {
-            return $order[0]['id'];
-        }
-        return null;
+        $order_id = $order[0]['id'];
+        $total_cost =  $order[0]['total_cost'];
+        $products = Application::$app->db->trySql('
+            SELECT * FROM orders_products
+            INNER JOIN products on orders_products.product_id = products.id
+            INNER JOIN sizes on orders_products.size_id = sizes.id
+            INNER JOIN colors on orders_products.color_id = colors.id
+            WHERE orders_products.order_id = "' . $order_id . '"');
+        $cart['user_id'] = $user_id;
+        $cart['total_cost'] = $total_cost;
+        $cart['products'] = $products;
+        echo json_encode( $cart );
     }
 
-
+//    private function callOpenOrderId($user_id) {
+//        $order = Application::$app->db->trySql('
+//            SELECT id FROM orders
+//            INNER JOIN order_statuses on orders.status_id = order_statuses.id
+//            WHERE order_statuses.status = "open" AND orders.user_id = "' . $user_id . '"');
+//
+//        if($order) {
+//            return $order[0]['id'];
+//        }
+//        return null;
+//    }
 }
