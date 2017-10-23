@@ -125,6 +125,8 @@ Cart.prototype.renderProduct = function (product) {
 };
 
 Cart.prototype.refresh = function () {
+    var self = this;
+    this.getData();
     var cart = $('#cart');
     var count = $('.drop-menu-cart__count');
     count.text(this.countProducts);
@@ -148,7 +150,7 @@ Cart.prototype.refresh = function () {
 
     // console.log(this.products);
     this.products.forEach(function(product) {
-        Cart.prototype.renderProduct(product);
+        self.renderProduct(product);
     })
 };
 
