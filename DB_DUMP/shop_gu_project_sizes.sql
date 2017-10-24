@@ -38,7 +38,7 @@ CREATE TABLE `sizes` (
 
 LOCK TABLES `sizes` WRITE;
 /*!40000 ALTER TABLE `sizes` DISABLE KEYS */;
-INSERT INTO `sizes` VALUES (1,'one size',NULL),(2,'xxxs',NULL),(3,'xxs',NULL),(4,'xs',NULL),(5,'s',NULL),(6,'m',NULL),(7,'l',NULL),(8,'xl',NULL),(9,'xxl',NULL),(10,'xxxl',NULL);
+INSERT INTO `sizes` VALUES (1,'one size',NULL),(2,'XXXS',NULL),(3,'XXS',NULL),(4,'XS',NULL),(5,'S',NULL),(6,'M',NULL),(7,'L',NULL),(8,'XL',NULL),(9,'XXL',NULL),(10,'XXXL',NULL);
 /*!40000 ALTER TABLE `sizes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-21 17:17:01
+-- Dump completed on 2017-10-24 17:49:40

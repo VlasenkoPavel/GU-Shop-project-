@@ -125,6 +125,37 @@ class Db
         $sth->execute();
     }
 
+    public function deleteProd($order_id, $product_id, $size_id, $color_id)
+    {
+
+        $sth = $this->connection->prepare("
+            DELETE FROM orders_products 
+            WHERE order_id = :order_id 
+            AND product_id = :product_id 
+            AND size_id = :size_id 
+            AND color_id = :color_id;
+        ");
+
+        $sth->bindParam(':order_id', $order_id, PDO::PARAM_INT);
+        $sth->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+        $sth->bindParam(':size_id', $size_id, PDO::PARAM_INT);
+        $sth->bindParam(':color_id', $color_id, PDO::PARAM_INT);
+        $sth->execute();
+    }
+
+    public function updateOrderTotalCost ($order_id, $total_cost)
+    {
+        $sth = $this->connection->prepare("
+            UPDATE orders 
+            SET orders.total_cost = :total_cost
+            WHERE id = :order_id 
+        ");
+
+        $sth->bindParam(':order_id', $order_id, PDO::PARAM_INT);
+        $sth->bindParam(':total_cost', $total_cost, PDO::PARAM_INT);
+        $sth->execute();
+    }
+
 //    public function queryNewProducts()
 //    {
 //        $num = 4;

@@ -101,6 +101,7 @@ Cart.prototype.renderProduct = function (product) {
 
     var buttonRemove = $('<a />', {
         class: "cart-product__delete-from-cart",
+        name: product.id + ',' + product.color + ',' + product.size
     });
 
     var iconRemove = $('<i />', {
@@ -126,8 +127,12 @@ Cart.prototype.renderProduct = function (product) {
 
 Cart.prototype.refresh = function () {
     var self = this;
-    this.getData();
     var cart = $('#cart');
+    cart.remove();
+    this.getData();
+    this.renderCart('#cart_wrapper');
+    cart = $('#cart');
+
     var count = $('.drop-menu-cart__count');
     count.text(this.countProducts);
     // console.log (count);
@@ -151,7 +156,8 @@ Cart.prototype.refresh = function () {
     // console.log(this.products);
     this.products.forEach(function(product) {
         self.renderProduct(product);
-    })
+    });
+    this.bindRemoveEvents();
 };
 
 Cart.prototype.add = function (idProduct, quantity, price) {
@@ -166,6 +172,38 @@ Cart.prototype.add = function (idProduct, quantity, price) {
     this.amount += price;
     this.cartItems.push(cartItem);
     this.refresh(); //Обновляем корзину
+};
+
+Cart.prototype.bindRemoveEvents = function() {
+    $(".cart-product__delete-from-cart").bind('click', function(elem){
+        var srtData = this.name;
+        var arrData = srtData.split(',');
+
+        $.get({
+            url: 'http://localhost/index.php/Order/RemoveProdFromOpenOrd',
+            context: this,
+            async: false,
+            dataType: 'json',
+            data: {
+                'product_id': arrData[0],
+                'color': arrData[1],
+                'size':arrData[2]
+            },
+            success: function (data) {
+                console.log(data);
+                Cart.prototype.refresh();
+                // cart.refresh();
+                // this.totalCost = + data.totalCost;
+                // this.products = data.products;
+                // this.countProducts = this.products.reduce(function (sum, curr) {
+                //     return sum + +curr.quantity;
+                // }, 0);
+            },
+            error: function (error) {
+                console.log('Ошибка', error.status, error.statusText);
+            }
+        });
+    });
 };
 
 // Cart.prototype.refresh = function () {
