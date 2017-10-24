@@ -96,7 +96,7 @@ class OrderController extends \core\Controller
         $size= $_GET['size'];
         $size_id = $this->getSizeId($size);
         $color_id = $this->getColorId($color);
-        $price = getPrice ($product_id);
+        $price = $this->getPrice ($product_id);
         $quantity = $this->getProdQuantity($product_id, $size_id, $color_id);
         if ($quantity == 1) {
             Application::$app->db->deleteProd($order_id, $product_id, $size_id, $color_id);
