@@ -902,7 +902,7 @@ table {
     height: 35px;
     display: block;
     position: relative;
-    padding-left: 40px;
+    padding-left: 20px;
     box-sizing: border-box;
     border: 1px solid black;
     background-color: #fff;
@@ -912,23 +912,16 @@ table {
     font-size: 13px;
     font-weight: 400;
     line-height: 35px; }
-    .c-color-select__item-link:before, .c-color-select__sub-menu-item-link:before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 12px;
-      left: 17px;
-      width: 10px;
-      height: 10px;
-      background-color: #ef5b70; }
     .c-color-select__item-link:hover, .c-color-select__sub-menu-item-link:hover {
       color: #ef5b70; }
   .c-color-select__sub-menu-item-link {
     border-top: 0; }
-    .c-color-select__sub-menu-item-link_green:before {
-      background-color: green; }
-    .c-color-select__sub-menu-item-link_blue:before {
-      background-color: blue; }
+    .c-color-select__sub-menu-item-link_red {
+      color: #ef5b70; }
+    .c-color-select__sub-menu-item-link_green {
+      color: green; }
+    .c-color-select__sub-menu-item-link_blue {
+      color: blue; }
 
 .c-size-select {
   position: relative;
@@ -951,6 +944,7 @@ table {
     border: 1px solid black;
     background-color: #fff;
     text-decoration: none;
+    outline: none;
     text-transform: uppercase;
     color: #bcbcbc;
     font-size: 13px;

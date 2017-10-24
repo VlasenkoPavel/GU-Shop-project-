@@ -130,7 +130,7 @@ Cart.prototype.refresh = function () {
     var cart = $('#cart');
     var count = $('.drop-menu-cart__count');
     count.text(this.countProducts);
-    console.log (count);
+    // console.log (count);
 
     var totalPriceLi = $('<li />', {
         class: "cart-sub-menu__item cart-sub-menu__item_total-price"

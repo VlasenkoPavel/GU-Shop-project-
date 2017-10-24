@@ -90,6 +90,41 @@ class Db
         return $result;
     }
 
+    public function addProdInOrd($order_id, $product_id, $size_id, $color_id, $quantity)
+    {
+        $sth = $this->connection->prepare("
+            INSERT INTO orders_products
+            (order_id, product_id, size_id, color_id, quantity)
+            VALUES (:order_id, :product_id, :size_id, :color_id, :quantity)
+        ");
+
+        $sth->bindParam(':order_id', $order_id, PDO::PARAM_INT);
+        $sth->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+        $sth->bindParam(':size_id', $size_id, PDO::PARAM_INT);
+        $sth->bindParam(':color_id', $color_id, PDO::PARAM_INT);
+        $sth->bindParam(':quantity', $quantity, PDO::PARAM_INT);
+        $sth->execute();
+    }
+
+    public function updateProdQuantity($order_id, $product_id, $size_id, $color_id, $quantity)
+    {
+        $sth = $this->connection->prepare("
+            UPDATE orders_products 
+            SET quantity = :quantity
+            WHERE order_id = :order_id 
+            AND product_id = :product_id 
+            AND size_id = :size_id 
+            AND color_id = :color_id;
+        ");
+
+        $sth->bindParam(':order_id', $order_id, PDO::PARAM_INT);
+        $sth->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+        $sth->bindParam(':size_id', $size_id, PDO::PARAM_INT);
+        $sth->bindParam(':color_id', $color_id, PDO::PARAM_INT);
+        $sth->bindParam(':quantity', $quantity, PDO::PARAM_INT);
+        $sth->execute();
+    }
+
 //    public function queryNewProducts()
 //    {
 //        $num = 4;
