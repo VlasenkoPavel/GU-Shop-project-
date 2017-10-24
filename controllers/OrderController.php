@@ -37,11 +37,6 @@ class OrderController extends \core\Controller
         return  $products;
     }
 
-    private function echoJsonProducts() {
-        $products = $this->getProducts();
-        echo json_encode($products);
-    }
-
     public function actionGetOpenOrder()
     {
         $cart = [];
@@ -75,7 +70,6 @@ class OrderController extends \core\Controller
             Application::$app->db->updateProdQuantity($order_id, $product_id, $size_id, $color_id, $quantity);
             Application::$app->db->updateOrderTotalCost($order_id, $total_cost);
             $this->refresh();
-//            $this->echoJsonProducts();
             echo json_encode($total_cost);
             die();
         }
@@ -83,8 +77,6 @@ class OrderController extends \core\Controller
         Application::$app->db->addProdInOrd($order_id, $product_id, $size_id, $color_id, $quantity);
         Application::$app->db->updateOrderTotalCost($order_id, $total_cost);
         $this->refresh();
-
-//        $this->echoJsonProducts();
         echo json_encode($price );
     }
 
@@ -103,7 +95,6 @@ class OrderController extends \core\Controller
             Application::$app->db->deleteProd($order_id, $product_id, $size_id, $color_id);
             Application::$app->db->updateOrderTotalCost($order_id, $total_cost);
             $this->refresh();
-//            echo json_encode([$order_id, $product_id, $size_id, $color_id]);
             echo json_encode([$order_id, $product_id, $size_id, $color_id]);
             die();
         }
@@ -154,15 +145,4 @@ class OrderController extends \core\Controller
         $price = +$price[0]['price'];
         return $price;
     }
-//    private function callOpenOrderId($user_id) {
-//        $order = Application::$app->db->trySql('
-//            SELECT id FROM orders
-//            INNER JOIN order_statuses on orders.status_id = order_statuses.id
-//            WHERE order_statuses.status = "open" AND orders.user_id = "' . $user_id . '"');
-//
-//        if($order) {
-//            return $order[0]['id'];
-//        }
-//        return null;
-//    }
 }
