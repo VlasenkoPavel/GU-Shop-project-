@@ -97,9 +97,11 @@ class OrderController extends \core\Controller
         $size_id = $this->getSizeId($size);
         $color_id = $this->getColorId($color);
         $price = $this->getPrice ($product_id);
+        $total_cost = $this->total_cost - $price;
         $quantity = $this->getProdQuantity($product_id, $size_id, $color_id);
         if ($quantity == 1) {
             Application::$app->db->deleteProd($order_id, $product_id, $size_id, $color_id);
+            Application::$app->db->updateOrderTotalCost($order_id, $total_cost);
             $this->refresh();
 //            echo json_encode([$order_id, $product_id, $size_id, $color_id]);
             echo json_encode([$order_id, $product_id, $size_id, $color_id]);
@@ -107,6 +109,7 @@ class OrderController extends \core\Controller
         }
         $quantity = $quantity - 1;
         Application::$app->db->updateProdQuantity($order_id, $product_id, $size_id, $color_id, $quantity);
+        Application::$app->db->updateOrderTotalCost($order_id, $total_cost);
         $this->refresh();
         echo json_encode([$quantity]);
     }
