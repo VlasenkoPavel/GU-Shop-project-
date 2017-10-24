@@ -37,6 +37,56 @@ class OrderController extends \core\Controller
         echo json_encode( $cart );
     }
 
+    public function actionAddProdToOpenOrd()
+    {
+        $color = $_GET['color'];
+        $size = $_GET['size'];
+
+        $order_id = $this->order_id;
+
+        $color_id = Application::$app->db->trySql('
+            SELECT id
+            FROM colors
+            WHERE color = "'.$color .'"
+            ');
+        $color_id = +$color_id[0]['id'];
+
+        $size_id = Application::$app->db->trySql('
+            SELECT id
+            FROM sizes
+            WHERE sizes.size = "'.$size .'"
+            ');
+        $size_id = +$size_id[0]['id'];
+
+        $product_id = +$_GET['product_id'];
+        $quantity = +$_GET['quantity'];
+
+        $prodQuantityInOrder = $this->getProdQuantity($product_id, $size_id, $color_id);
+
+        if ($prodQuantityInOrder) {
+            $quantity = $quantity + $prodQuantityInOrder;
+            Application::$app->db->updateProdQuantity($order_id, $product_id, $size_id, $color_id, $quantity);
+            echo json_encode([$prodQuantityInOrder , 'товар уже в корзине']);
+            die();
+        }
+
+        Application::$app->db->addProdInOrd($order_id, $product_id, $size_id, $color_id, $quantity);
+        echo json_encode([$prodQuantityInOrder]);
+    }
+
+    protected function getProdQuantity($product_id, $size_id, $color_id)
+    {
+        $product_id = Application::$app->db->trySql('
+            SELECT quantity
+            FROM orders_products
+            WHERE product_id = "'.$product_id.'"
+            AND size_id = "'.$size_id.'"
+            AND color_id = "'.$color_id.'"
+            ');
+        $product_id = +$product_id[0]['quantity'];
+        return $product_id;
+    }
+
 //    private function callOpenOrderId($user_id) {
 //        $order = Application::$app->db->trySql('
 //            SELECT id FROM orders
