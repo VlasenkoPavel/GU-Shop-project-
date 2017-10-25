@@ -5,7 +5,6 @@
     <title>Catalogue</title>
     <link rel="stylesheet" href="<?= CSS_CATALOG . 'ion.rangeSlider.css'?>" />
     <link rel="stylesheet" href="<?= CSS_CATALOG . 'ion.rangeSlider.skinFlat.css'?>"/>
-    <script src="<?= JS_CATALOG . 'jquery-3.2.1.min.js'?>"></script>
     <script src="<?= JS_CATALOG . 'ion.rangeSlider.js'?>"></script>
     <script src="<?= JS_CATALOG . 'paging.js'?>"></script>
 </head>
