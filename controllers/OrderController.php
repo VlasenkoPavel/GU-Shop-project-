@@ -50,19 +50,13 @@ class OrderController extends \core\Controller
     {
         $color = $_GET['color'];
         $size = $_GET['size'];
-
         $order_id = $this->order_id;
-
         $color_id = $this->getColorId($color);
-
         $size_id = $this->getSizeId($size);
-
         $product_id = +$_GET['product_id'];
         $quantity = +$_GET['quantity'];
-
         $price = $this->getPrice($product_id);
         $total_cost = $this->total_cost + $price;
-
         $prodQuantityInOrder = $this->getProdQuantity($product_id, $size_id, $color_id);
 
         if ($prodQuantityInOrder) {
@@ -117,6 +111,7 @@ class OrderController extends \core\Controller
         $quantity = +$quantity[0]['quantity'];
         return $quantity;
     }
+
     private function getSizeId ($size) {
         $size_id = Application::$app->db->trySql('
             SELECT id
@@ -136,6 +131,7 @@ class OrderController extends \core\Controller
         $color_id = +$color_id[0]['id'];
         return $color_id;
     }
+
     private function getPrice ($product_id) {
         $price = Application::$app->db->trySql('
             SELECT price

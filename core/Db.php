@@ -155,24 +155,4 @@ class Db
         $sth->bindParam(':total_cost', $total_cost, PDO::PARAM_INT);
         $sth->execute();
     }
-
-//    public function queryNewProducts()
-//    {
-//        $num = 4;
-//        $this->sth = $this->connection->prepare('SELECT * FROM products LIMIT 4');
-////        $this->sth->bindParam(':num', $num);
-////        db2_bind_param(1,)
-//        $this->sth->execute([$num]);
-//        return $this->sth->fetchAll();
-//    }
-
-//    public function trySql ($sql) {
-//        try {
-//            $result = $this->connection->query($sql);
-//        } catch (PDOException $e) {
-//            return false;
-//        };
-//        return true;
-//    }
-
 }
