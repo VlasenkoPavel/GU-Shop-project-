@@ -2,30 +2,23 @@
 <html lang="ru">
 <head>
     <?php require_once VIEWS_DIR . '__head.php'; ?>
-    <?php require_once VIEWS_DIR . '__headProductPage.php'; ?>
+    <?php
+        require_once VIEWS_DIR . '__headProductPage.php';
+        $product_id = $this->product->getProductId();
+    ?>
     <title>New arrivals</title>
 </head>
 <body>
 <div class="container">
     <?php require_once  VIEWS_DIR . '__header.php' ?>
     <main class="main">
-        <div class="stretchable-wrapper stretchable-wrapper_new-arrivals">
-            <div class="content-wrapper">
-                <div class="new-arrivals">
-                    <h1 class="new-arrivals__page-heading">new arrivals</h1>
-                    <nav class="new-arrivals-menu">
-                        <a href="#" class="new-arrivals-menu__item">home</a>
-                        <a href="#" class="new-arrivals-menu__item">men</a>
-                        <a href="#" class="new-arrivals-menu__item">new arrivals</a>
-                    </nav>
-                </div>
-            </div>
-        </div>
+        <?php require_once  VIEWS_DIR . '__new-arrivals.php' ?>
         <div class="stretchable-wrapper_new-arrivals-slider">
             <div class="content-wrapper">
                 <div class="single-page-slider">
                     <a href="#" role="button" class="slider-button" onclick="return false">‹</a>
-                    <img src="<?= PROD_IMG_CATALOG . $this->product->getProductId().'.jpg' ?>" alt="" class="single-page-slider__image">
+                    <img src="<?php echo PROD_IMG_CATALOG . $product_id . DIRECTORY_SEPARATOR . $product_id.'_1.jpg' ?>
+                    " alt="" class="single-page-slider__image">
                     <a href="#" role="button" class="slider-button" onclick="return false">›</a>
                 </div>
             </div>

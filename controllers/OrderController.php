@@ -21,7 +21,8 @@ class OrderController extends \core\Controller
     public function actionGetOpenOrder()
     {
         $cart = $this->order->getData();
-            echo json_encode($cart);
+        echo json_encode($cart);
+        die();
     }
 
     public function actionAddProdToOpenOrd()
@@ -37,8 +38,17 @@ class OrderController extends \core\Controller
 
     public function actionRemoveProdFromOpenOrd ()
     {
-        $result = $this->order->removeProduct();
+        $product_id = +$_GET['product_id'];
+        $color= $_GET['color'];
+        $size= $_GET['size'];
+        $result = $this->order->removeProduct($product_id, $color, $size);
         echo json_encode($result);
         die();
+    }
+
+    public function actionShowCartPage()
+    {
+        $this->layout = 'EmptyPage';
+        echo $this->render('__cart');
     }
 }

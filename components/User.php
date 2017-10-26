@@ -22,8 +22,15 @@ class User
 
     public function __construct($login, $password)
     {
-        $result = Application::$app->db->trySql('SELECT * FROM `users` WHERE `login` = "'.$login.'" AND `password` = "'.$password.'"');
-
+        $result = Application::$app->db->trySql('
+            SELECT * 
+            FROM `users` 
+            INNER JOIN permissions
+            ON users.permission_id = permissions.id
+            WHERE `login` = "'.$login.'" 
+            AND `password` = "'.$password.'"
+            ');
+//        var_dump($result);
         if ($result[0]) {
             $this->id = $result [0] ['id'];
             $this->name = $result[0]['name'];
@@ -67,6 +74,10 @@ class User
 
     public function getId () {
         return $this->id;
+    }
+
+    public function getPermission () {
+        return $this->permission;
     }
 
     private function setCookie()

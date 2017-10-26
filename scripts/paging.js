@@ -131,7 +131,7 @@ class ajaxPageVisualizer
         {
             let htmlCode = ''
                 + '<a href="http://localhost/index.php/main/ShowProductPage?product_id=' + unit.id +  '" class="product-link product-link_in-narrow-wrapper">'
-                + '<img src="http://localhost/content/img/img_products/' + unit.id + '.jpg" alt="" class="product-link__product-img">'
+                + '<img src="http://localhost/content/img/img_products/' + unit.id + '/' + unit.id + '_1.jpg" alt="" class="product-link__product-img">'
                 + '<p class="product-link__product-name">' + unit.name + '</p>'
                 + '<p class="product-link__product-price">' + unit.price + '</p>'
                 + '<div class="product-link__product-hover-mask">'

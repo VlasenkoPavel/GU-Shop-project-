@@ -21,7 +21,7 @@ class Application
             self::$app->request = new Request();
             self::$app->user = self::checkUser();
             self::$app->request->init();
-//            var_dump(self::$app->user->getId());
+//            var_dump(self::$app->user->getPermission());
         }
         return self::$app;
     }
@@ -50,6 +50,12 @@ class Application
             return false;
         });
     }
+
+    public function setUser($user)
+    {
+        self::$app->user = $user;
+    }
+
 
     public static function checkUser()
     {

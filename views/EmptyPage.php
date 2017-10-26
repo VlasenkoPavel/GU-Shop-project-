@@ -11,6 +11,7 @@
 <div class="container">
     <?php require_once VIEWS_DIR . '__header.php'; ?>
     <main class="main">
+        <?php require_once  VIEWS_DIR . '__new-arrivals.php' ?>
         <div class="content-wrapper content-wrapper_main">
             <div class="content"></div>
         </div>

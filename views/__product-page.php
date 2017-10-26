@@ -14,9 +14,9 @@
     <div class="stretchable-wrapper_new-arrivals-slider">
         <div class="content-wrapper">
             <div class="single-page-slider">
-                <a href="#" role="button" class="slider-button" onclick="return false">‹</a>
+                <a href="#" role="button" class="slider-button">‹</a>
                 <img src="<?= PROD_IMG_CATALOG . $this->product->getProductId().'.jpg' ?>" alt="" class="single-page-slider__image">
-                <a href="#" role="button" class="slider-button" onclick="return false">›</a>
+                <a href="#" role="button" class="slider-button">›</a>
             </div>
         </div>
     </div>
@@ -34,13 +34,13 @@
                 <div class="c-color-select">
                     <ul class="l-drop-menu">
                         <li class="l-drop-menu__item_color">
-                            <a href="#" class="c-color-select__item-link" onclick="return false">red</a>
+                            <a href="#" class="c-color-select__item-link">red</a>
                             <ul class="l-drop-menu__sub-menu l-drop-menu__sub-menu_color">
                                 <li class="l-drop-menu__sub-menu-item">
-                                    <a href="#" class="c-color-select__sub-menu-item-link c-color-select__sub-menu-item-link_green" onclick="return false">green</a>
+                                    <a href="#" class="c-color-select__sub-menu-item-link c-color-select__sub-menu-item-link_green">green</a>
                                 </li>
                                 <li class="l-drop-menu__sub-menu-item">
-                                    <a href="#" class="c-color-select__sub-menu-item-link c-color-select__sub-menu-item-link_blue" onclick="return false">blue</a>
+                                    <a href="#" class="c-color-select__sub-menu-item-link c-color-select__sub-menu-item-link_blue">blue</a>
                                 </li>
                             </ul>
                         </li>
@@ -49,22 +49,22 @@
                 <div class="c-size-select">
                     <ul class="l-drop-menu">
                         <li class="l-drop-menu__item_size">
-                            <a href="#" class="c-size-select__item-link" onclick="return false">XXL</a>
+                            <a href="#" class="c-size-select__item-link">XXL</a>
                             <ul class="l-drop-menu__sub-menu l-drop-menu__sub-menu_size">
                                 <li class="l-drop-menu__sub-menu-item">
-                                    <a href="#" class="c-size-select__sub-menu-item-link" onclick="return false">XL</a>
+                                    <a href="#" class="c-size-select__sub-menu-item-link">XL</a>
                                 </li>
                                 <li class="l-drop-menu__sub-menu-item">
-                                    <a href="#" class="c-size-select__sub-menu-item-link" onclick="return false">L</a>
+                                    <a href="#" class="c-size-select__sub-menu-item-link">L</a>
                                 </li>
                                 <li class="l-drop-menu__sub-menu-item">
-                                    <a href="#" class="c-size-select__sub-menu-item-link" onclick="return false">M</a>
+                                    <a href="#" class="c-size-select__sub-menu-item-link">M</a>
                                 </li>
                                 <li class="l-drop-menu__sub-menu-item">
-                                    <a href="#" class="c-size-select__sub-menu-item-link" onclick="return false">s</a>
+                                    <a href="#" class="c-size-select__sub-menu-item-link">s</a>
                                 </li>
                                 <li class="l-drop-menu__sub-menu-item">
-                                    <a href="#" class="c-size-select__sub-menu-item-link" onclick="return false">xs</a>
+                                    <a href="#" class="c-size-select__sub-menu-item-link">xs</a>
                                 </li>
                             </ul>
                         </li>
@@ -73,13 +73,13 @@
                 <div class="c-quantity-select">
                     <input class="c-quantity-select__input" id="quantity" type="number" value="1" step="1">
                 </div>
-                <a href="#" class="button button_product-choice-button" role="button" onclick="return false">add to cart</a>
+                <a href="#" class="button button_product-choice-button" role="button">add to cart</a>
             </form>
         </section>
         <aside class="products-section content-wrapper__products-section">
             <h3 class="product-section-heding">you may like also</h3>
             <div class="products-wrapper products-section__products-wrapper">
-                <a href="#" class="product-link" onclick="return false">
+                <a href="#" class="product-link">
                     <img src="img/prod_img/prod_1_img.jpg" alt="" class="product-link__product-img">
                     <p class="product-link__product-name">mango people T-shirt</p>
                     <p class="product-link__product-price">$50.00</p>
@@ -87,7 +87,7 @@
                         <div class="product-link__add-to-cart">add to cart</div>
                     </div>
                 </a>
-                <a href="#" class="product-link" onclick="return false">
+                <a href="#" class="product-link">
                     <img src="img/prod_img/prod_2_img.jpg" alt="" class="product-link__product-img">
                     <p class="product-link__product-name">mango people T-shirt</p>
                     <p class="product-link__product-price">$50.00</p>
@@ -95,7 +95,7 @@
                         <div class="product-link__add-to-cart">add to cart</div>
                     </div>
                 </a>
-                <a href="#" class="product-link" onclick="return false">
+                <a href="#" class="product-link">
                     <img src="img/prod_img/prod_1_img.jpg" alt="" class="product-link__product-img">
                     <p class="product-link__product-name">mango people T-shirt</p>
                     <p class="product-link__product-price">$50.00</p>
@@ -103,7 +103,7 @@
                         <div class="product-link__add-to-cart">add to cart</div>
                     </div>
                 </a>
-                <a href="#" class="product-link" onclick="return false">
+                <a href="#" class="product-link">
                     <img src="img/prod_img/prod_4_img.jpg" alt="" class="product-link__product-img">
                     <p class="product-link__product-name">mango people T-shirt</p>
                     <p class="product-link__product-price">$50.00</p>

@@ -71,12 +71,9 @@ class Order
        return $total_cost;
     }
 
-    public function removeProduct ()
+    public function removeProduct ($product_id, $color, $size)
     {
         $order_id = +$this->order_id;
-        $product_id = +$_GET['product_id'];
-        $color= $_GET['color'];
-        $size= $_GET['size'];
         $size_id = $this->getSizeId($size);
         $color_id = $this->getColorId($color);
         $price = $this->getPrice ($product_id);

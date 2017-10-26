@@ -39,7 +39,7 @@ Cart.prototype.renderCart = function (root) {
         text: "checkout"
     });
     var goToCartLink = $('<a />', {
-        href: "Shopping_cart.html",
+        href: "http://localhost/index.php/Order/ShowCartPage",
         class: "button button_sub-menu-cart",
         text: "go to cart"
     });
@@ -84,7 +84,7 @@ Cart.prototype.renderProduct = function (product) {
         class: "cart-sub-menu__item-product cart-product"
     });
     var productImg = $('<Img />', {
-        src: "http://localhost/content/img/img_products/" + product.id + '.jpg',
+        src: "http://localhost/content/img/img_products/" + product.id + '/' + product.id + '_1.jpg',
         class: "cart-product__product-img"
     });
     var productInnerDiv = $('<div />', {

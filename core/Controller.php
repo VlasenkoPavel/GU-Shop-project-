@@ -48,17 +48,3 @@ abstract class Controller
         }
     }
 }
-//class Controller
-//{
-//    protected $model;
-//    protected $viewFile;
-//
-//    public function __construct()
-//    {
-//        $this->model = new Model;
-//    }
-//
-//    public function render() {
-//        require_once $this->viewFile;
-//    }
-//}

@@ -42,19 +42,7 @@
                     <a href="#" class="drop-menu-cart__item-link"></a>
                 </li>
             </ul>
-            <ul class="drop-menu-account header__drop-menu-account">
-                <li class="drop-menu-account__item">
-                    <a href="#" class="drop-menu-account__item-link">
-                        my account
-                        <b class="drop-menu-account__drop-down-arrow">▼</b>
-                    </a>
-                    <ul class="drop-menu-account__sub-menu header-sub-menu">
-                        <li class="header-sub-menu__item-heading">Account</li>
-                        <li><a href="http://localhost/index.php/User/Login" class="header-sub-menu__item-link">Login</a></li>
-                        <li><a href="http://localhost/index.php/User/Registration" class="header-sub-menu__item-link">Registration</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <?php require_once VIEWS_DIR . '__account-menu.php'; ?>
         </div>
     </div>
     <a href="#" class="main-menu__main-button">&#9776;</a>
@@ -70,26 +58,21 @@
                     <li><a href="http://localhost/index.php/main/ShowCatalogue?type=jackets&category=men" class="header-sub-menu__item-link">Jackets</a></li>
                     <li><a href="http://localhost/index.php/main/ShowCatalogue" class="header-sub-menu__item-link">Item</a></li>
                     <li><a href="http://localhost/index.php/main/ShowCatalogue" class="header-sub-menu__item-link">Item</a></li>
-                    <li><a href="http://localhost/index.php/main/ShowCatalogue" class="header-sub-menu__item-link">Item</a></li>
                 </ul>
             </li>
             <li class="main-menu__item">
                 <a href="#" class="main-menu__item-link">women</a>
                 <ul class="main-menu__sub-menu header-sub-menu">
                     <li class="header-sub-menu__item-heading">Women</li>
-                    <li><a href="http://localhost/index.php/main/ShowWomenCoats" class="header-sub-menu__item-link">Coats</a></li>
-                    <li><a href="Product.html" class="header-sub-menu__item-link">Item</a></li>
-                    <li><a href="Product.html" class="header-sub-menu__item-link">Item</a></li>
-                    <li><a href="Product.html" class="header-sub-menu__item-link">Item</a></li>
-                    <li><a href="Product.html" class="header-sub-menu__item-link">Item</a></li>
+                    <li><a href="http://localhost/index.php/main/ShowCatalogue?type=coats&category=women" class="header-sub-menu__item-link">Coats</a></li>
+                    <li><a href="#" class="header-sub-menu__item-link">Item</a></li>
+                    <li><a href="#" class="header-sub-menu__item-link">Item</a></li>
                 </ul>
             </li>
             <li class="main-menu__item">
                 <a href="#" class="main-menu__item-link">Kids</a>
                 <ul class="main-menu__sub-menu header-sub-menu">
                     <li class="header-sub-menu__item-heading">kids</li>
-                    <li><a href="#" class="header-sub-menu__item-link">Item</a></li>
-                    <li><a href="#" class="header-sub-menu__item-link">Item</a></li>
                     <li><a href="#" class="header-sub-menu__item-link">Item</a></li>
                     <li><a href="#" class="header-sub-menu__item-link">Item</a></li>
                 </ul>
