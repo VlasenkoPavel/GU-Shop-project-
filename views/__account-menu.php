@@ -17,7 +17,7 @@
                 if ( core\Application::$app->user->getPermission() == "admin" ):
             ?>
                 <!--            <li class="header-sub-menu__item-heading">Account</li>-->
-                <li><a href="http://localhost/index.php/User/ShowAdminPanel" class="header-sub-menu__item-link">Admin Panel</a></li>
+                <li><a href="http://localhost/index.php/Admin/ShowAdminPanel" class="header-sub-menu__item-link">Admin Panel</a></li>
                 <li><a href="http://localhost/index.php/User/Exit" class="header-sub-menu__item-link">Exit</a></li>
             <?php
                 endif;

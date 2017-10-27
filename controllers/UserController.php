@@ -23,6 +23,13 @@ class UserController extends \core\Controller
                 Application::$app->setUser($user);
                 $this->userData = $user->getData();
                 $this->message  = 'wellcome ' . $this->userData[ 'name' ];
+                $promission = $user->getPermission();
+
+                if ( $promission = 'admin') {
+                    echo $this->render( '__admin-panel', $this->userData );
+                    return true;
+                }
+
                 echo $this->render( '__account', $this->userData );
                 return true;
 
@@ -43,11 +50,14 @@ class UserController extends \core\Controller
         header( "Location: $_SERVER[HTTP_REFERER]" );
     }
 
-    public function actionShowAdminPanel() {
-        User::removeCookie();
-        Application::$app->user = null;
-        header( "Location: $_SERVER[HTTP_REFERER]" );
-    }
+//    public function actionShowAdminPanel() {
+//        if ( ! (Application::$app->user) || Application::$app->user->getPermission() !== 'admin') {
+//            echo 'access denied';
+//        }
+//        else {
+//            echo $this->render( '__admin-panel', Application::$app->user->getData() );
+//        }
+//    }
 
     public static function callUser ( $login, $password )
     {
@@ -64,7 +74,7 @@ class UserController extends \core\Controller
 
     private function renderLogWithMessage( $message ) {
         $this->message = $message;
-        echo $this->render( '__admin-panel' );
+        echo $this->render( '__login' );
     }
 
 }
