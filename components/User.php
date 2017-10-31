@@ -99,9 +99,9 @@ class User
         self::removeCookie();
     }
 
-    public function setUserVisitUrl ()
-    {
-        $sql = 'INSERT INTO `last_visit` (`timestamp`, `url`, `users_id`) VALUES ("'.time().'", "'.$_SERVER['REQUEST_URI'].'", "'.$this->userId.'")';
-        Application::$app->db->trySql($sql);
-    }
+//    public function setUserVisitUrl ()
+//    {
+//        $sql = 'INSERT INTO `last_visit` (`timestamp`, `url`, `users_id`) VALUES ("'.time().'", "'.$_SERVER['REQUEST_URI'].'", "'.$this->userId.'")';
+//        Application::$app->db->trySql($sql);
+//    }
 }

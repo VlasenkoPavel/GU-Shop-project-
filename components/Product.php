@@ -12,7 +12,7 @@ class Product
     private $category_id;
     private $price;
     private $discount;
-    private $feature;
+    private $feature_id;
 
     public function __construct($id)
     {
@@ -26,7 +26,7 @@ class Product
             $this->category_id = $result[0]['category_id'];
             $this->price = $result[0]['price'];
             $this->discount = $result[0]['discount'];
-            $this->feature = $result[0]['feature'];
+            $this->feature_id = $result[0]['feature_id'];
         }
     }
 
@@ -38,5 +38,29 @@ class Product
     public function getProductName ()
     {
         return $this->name;
+    }
+    public function getPrice ()
+    {
+        return $this->price;
+    }
+    public function getCategory ()
+    {
+        $result = Application::$app->db->trySql('
+            SELECT category  
+            FROM categoryes  
+            WHERE id = "' . $this->category_id . '"
+            ');
+        $category = $result[0]['category'];
+        return $category;
+    }
+    public function getBrand ()
+    {
+        $result = Application::$app->db->trySql('
+            SELECT brand  
+            FROM brands 
+            WHERE id = "' . $this->brand_id . '"
+            ');
+        $brand = $result[0]['brand'];
+        return $brand;
     }
 }

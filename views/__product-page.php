@@ -15,7 +15,7 @@
         <div class="content-wrapper">
             <div class="single-page-slider">
                 <a href="#" role="button" class="slider-button">‹</a>
-                <img src="<?= PROD_IMG_CATALOG . $this->product->getProductId().'.jpg' ?>" alt="" class="single-page-slider__image">
+                <img src="<?= PROD_IMG_CATALOG . $this->product->getProductId().'.jpg'; ?>" alt="" class="single-page-slider__image">
                 <a href="#" role="button" class="slider-button">›</a>
             </div>
         </div>
@@ -23,12 +23,12 @@
     <div class="content-wrapper content-wrapper_main">
         <section class="product-choice">
             <p class="product-choice__colection-name">women collections</p>
-            <h2 class="product-choice__product-name">Moschino Cheap And Chic</h2>
+            <h2 class="product-choice__product-name"><?= $this->product->getProductName(); ?></h2>
             <p class="product-choice__product-short-description">Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.</p>
             <p class="product-choice__mateial">MATERIAL:
                 <b class="product-choice__mateial-name">COTTON</b></p>
             <p class="product-choice__designer">DESIGNER:
-                <b class="product-choice__designer-name">BINBURHAN</b></p>
+                <b class="product-choice__designer-name"><?= $this->product->getBrand(); ?></b></p>
             <p class="product-choice__price">$561</p>
             <form action="" class="product-choice__form">
                 <div class="c-color-select">

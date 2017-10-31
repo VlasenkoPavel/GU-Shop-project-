@@ -10,6 +10,11 @@ define( 'VIEWS_DIR', PUBLIC_DIR . 'views' . DIRECTORY_SEPARATOR );
 define( 'LAYOUTS_DIR', VIEWS_DIR . 'layouts' . DIRECTORY_SEPARATOR );
 //define( 'CSS_DIR', preg_replace("/\\\\/", "/", PUBLIC_DIR . 'content' . DIRECTORY_SEPARATOR  . 'css' . DIRECTORY_SEPARATOR ));
 
+define( 'BOWER_C_CATALOG', 'http://localhost/bower_components/');
+define( 'JQ_CATALOG', BOWER_C_CATALOG . 'jquery/');
+define( 'JQUI_CATALOG', BOWER_C_CATALOG .'jquery-ui/');
+define( 'JQUI_THEMES_CATALOG', JQUI_CATALOG . 'themes/' );
+
 define( 'CSS_CATALOG', 'http://localhost/content/css/');
 define( 'INDEX', 'http://localhost/index.php/');
 define( 'IMG_CATALOG', 'http://localhost/content/css/');

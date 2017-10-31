@@ -9,7 +9,7 @@ class Db
     public static $db;
     private $configFile = SITE_ROOT.'ConfigDB.php';
     private $settings = [];
-    private $connection;
+    public $connection;
     private $sql;
     private $options = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, //Вывод исключений на экран

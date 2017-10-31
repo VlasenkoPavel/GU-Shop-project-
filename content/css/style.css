@@ -866,6 +866,7 @@ table {
     font-weight: 700;
     line-height: 24px; }
   .product-choice__mateial-name, .product-choice__designer-name {
+    text-transform: uppercase;
     color: #2f2f2f; }
   .product-choice__price {
     height: 104px;
@@ -2366,9 +2367,67 @@ table {
   padding-bottom: 30px;
   box-sizing: border-box; }
   .admin-panel__info {
-    padding-top: 50px;
-    padding-left: 210px;
-    box-sizing: border-box; }
+    margin-top: 20px; }
+
+.form-admin-panel {
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  border: 1px solid #898989;
+  color: #4a494a;
+  font-weight: 700; }
+  .form-admin-panel__inner-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center; }
+  .form-admin-panel__legend {
+    width: 150px;
+    padding-left: 10px;
+    background-color: white;
+    margin-top: -30px;
+    margin-bottom: 20px; }
+    .form-admin-panel__legend_category {
+      width: 160px; }
+    .form-admin-panel__legend_type {
+      width: 120px; }
+    .form-admin-panel__legend_brand {
+      width: 130px; }
+    .form-admin-panel__legend_dell-prod {
+      width: 190px; }
+    .form-admin-panel__legend_prod_id_by_name {
+      width: 210px; }
+    .form-admin-panel__legend_user {
+      width: 80px; }
+    .form-admin-panel__legend_order {
+      width: 90px; }
+  .form-admin-panel__label {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center; }
+  .form-admin-panel__select {
+    width: 200px;
+    margin-left: 20px;
+    margin-top: 5px; }
+  .form-admin-panel__input {
+    width: 196px;
+    height: 15px;
+    margin-left: 20px;
+    margin-top: 5px; }
+  .form-admin-panel__input-file {
+    margin-top: 15px;
+    margin-bottom: 15px; }
+  .form-admin-panel__submit {
+    width: 150px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 0.8em !important;
+    margin-top: 5px;
+    margin-left: 20px; }
+    .form-admin-panel__submit_product {
+      margin-left: 0; }
 
 .button_dropped {
   margin-top: 38px;
