@@ -16,23 +16,12 @@ Cart.prototype.renderCart = function (root) {
         id: "cart",
         class: "drop-menu-cart__sub-menu cart-sub-menu"
     });
-    // var totalPriceLi = $('<li />', {
-    //     class: "cart-sub-menu__item cart-sub-menu__item_total-price"
-    // });
     var checkoutLi = $('<li />', {
         class: "cart-sub-menu__item cart-sub-menu__item_button"
     });
     var goToCartLi = $('<li />', {
         class: "cart-sub-menu__item cart-sub-menu__item_button"
     });
-    // var totalP = $('<p />', {
-    //     class: "cart-sub-menu__total",
-    //     text: 'total'
-    // });
-    // var priceP = $('<p />', {
-    //     class: "cart-sub-menu__price",
-    //     text: this.totalCost
-    // });
     var checkoutLink = $('<a />', {
         href: "Сheckout.html",
         class: "button button_sub-menu-cart",
@@ -46,10 +35,6 @@ Cart.prototype.renderCart = function (root) {
 
     goToCartLink.appendTo(goToCartLi);
     checkoutLink.appendTo(checkoutLi);
-    // totalP.appendTo(totalPriceLi );
-    // priceP.appendTo(totalPriceLi );
-
-    // totalPriceLi.appendTo(cart);
     goToCartLi.appendTo(cart);
     checkoutLi.appendTo(cart);
 
@@ -99,14 +84,15 @@ Cart.prototype.renderProduct = function (product) {
         text: product.quantity + ' x ' + product.price
     });
 
-    var buttonRemove = $('<a />', {
+    var buttonRemove = $('<div />', {
         class: "cart-product__delete-from-cart",
-        name: product.id + ',' + product.color + ',' + product.size
+        name: "removeProdButton",
+        'data-prod': product.id + ',' + product.color + ',' + product.size
     });
 
     var iconRemove = $('<i />', {
-        class: "fa fa-times-circle fa"
-        // aria-hidden: "true"
+        class: "fa fa-times-circle fa",
+        'aria-hidden': "true"
     });
 
     iconRemove.appendTo(buttonRemove);
@@ -117,12 +103,101 @@ Cart.prototype.renderProduct = function (product) {
     buttonRemove.appendTo(productDiv);
     productDiv.appendTo(productLi);
 
-    // var totalPrice = $('[class*=cart-sub-menu__item_total-price]')[0];
-    // console.log(totalPrice);
     var cart = $('#cart');
     productLi.prependTo(cart);
-    // console.log(cart);
-    // productLi.before(totalPrice);
+};
+
+Cart.prototype.renderProdInTable = function (product) {
+
+    var productTr = $('<tr />', {
+        class: "cart-table-row-product",
+        id: 'prod_' + product.id
+    });
+    var imgCell = $('<td />', {
+        class: "cart-table-row-product__img-cell"
+    });
+    var image = $('<Img />', {
+        src: "http://localhost/content/img/img_products/" + product.id + '/' + product.id + '_1.jpg',
+        class: "cart-table-row-product__img"
+    });
+    var nameCell = $('<td />', {
+        class: "cart-table-row-product__product-name-cell"
+    });
+    var name = $('<p />', {
+        class: "cart-table-row-product__product-name",
+        text: product.name
+    });
+    var colorWrapper = $('<p />', {
+        text: 'Color: '
+    });
+    var sizeWrapper = $('<p />', {
+        text: 'Size: '
+    });
+    var color = $('<b />', {
+        text: product.color
+    });
+    var size = $('<b />', {
+        text: product.size
+    });
+    var priceCell = $('<td />', {
+        class: "cart-table-row-product__price-cell",
+        text: '$ ' + product.price
+    });
+    var quantitysCell = $('<td />', {
+        class: "cart-table-row-product__quantitys-cell",
+        text: product.quantity
+    });
+    var shippingCell = $('<td />', {
+        class: "cart-table-row-product__shipping-cell",
+        text: 'FREE'
+    });
+    var subtotalCell = $('<td />', {
+        class: "cart-table-row-product__shipping-cell",
+        text: '$ ' + (product.price * product.quantity)
+    });
+    var actionCell = $('<td />', {
+        class: "cart-table-row-product__action-cell"
+    });
+    var removeButton = $('<div />', {
+        class: "cart-table-row-product__remove-button",
+        name: "removeProdButton",
+        'data-prod': product.id + ',' + product.color + ',' + product.size
+    });
+    var iconRemove = $('<i />', {
+        class: "fa fa-times-circle fa",
+        'aria-hidden': "true"
+    });
+
+    iconRemove.appendTo(removeButton);
+    removeButton.appendTo(actionCell);
+    size.appendTo(sizeWrapper);
+    color.appendTo(colorWrapper);
+
+    name.appendTo(nameCell);
+    colorWrapper.appendTo(nameCell);
+    sizeWrapper.appendTo(nameCell);
+    image.appendTo(imgCell);
+
+    imgCell.appendTo(productTr);
+    nameCell.appendTo(productTr);
+    priceCell.appendTo(productTr);
+    quantitysCell.appendTo(productTr);
+    shippingCell.appendTo(productTr);
+    subtotalCell.appendTo(productTr);
+    actionCell.appendTo(productTr);
+
+    var cartTable = $('#cartTable');
+    productTr.appendTo(cartTable);
+};
+
+Cart.prototype.renderCartTable = function () {
+    var self = this;
+
+    this.products.forEach(function(product) {
+        self.renderProdInTable (product);
+    });
+    $('#cartFormSubTotal').text( '$ ' + this.totalCost );
+    $('#cartFormGrandTotal').text( '$ ' + this.totalCost );
 };
 
 Cart.prototype.refresh = function () {
@@ -153,18 +228,26 @@ Cart.prototype.refresh = function () {
     priceP.appendTo(totalPriceLi );
     totalPriceLi.prependTo(cart);
 
-    // console.log(this.products);
     this.products.forEach(function(product) {
         self.renderProduct(product);
     });
+
+    if ( $('#cartTable').length ) {
+        var products = $("[id^=prod]");
+        products.remove();
+        self.renderCartTable();
+    };
+
     this.bindRemoveEvents();
 };
 
 Cart.prototype.bindRemoveEvents = function() {
-    $(".cart-product__delete-from-cart").bind('click', function(elem){
-        var srtData = this.name;
-        var arrData = srtData.split(',');
+    var self = this;
 
+    $("[name=removeProdButton]").on('click', function(){
+        var srtData = this.getAttribute('data-prod');
+        var arrData = srtData.split(',');
+        self.refresh();
         $.get({
             url: 'http://localhost/index.php/Order/RemoveProdFromOpenOrd',
             context: this,
@@ -176,14 +259,24 @@ Cart.prototype.bindRemoveEvents = function() {
                 'size':arrData[2]
             },
             success: function (data) {
-                console.log(data);
                 Cart.prototype.refresh();
-                // cart.refresh();
-                // this.totalCost = + data.totalCost;
-                // this.products = data.products;
-                // this.countProducts = this.products.reduce(function (sum, curr) {
-                //     return sum + +curr.quantity;
-                // }, 0);
+            },
+            error: function (error) {
+                console.log('Ошибка', error.status, error.statusText);
+            }
+        });
+    });
+    $("#clearCartButton").on('click', function(){
+        $.get({
+            url: 'http://localhost/index.php/Order/RemoveAllProdFromOpenOrd',
+            context: this,
+            async: false,
+            dataType: 'json',
+            data: {
+                'removeAllproducts': true
+            },
+            success: function (data) {
+                self.refresh();
             },
             error: function (error) {
                 console.log('Ошибка', error.status, error.statusText);

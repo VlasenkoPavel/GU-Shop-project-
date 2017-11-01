@@ -92,6 +92,29 @@ class Order
         return $quantity;
     }
 
+    public function removeAllProducts ()
+    {
+        $order_id = +$this->order_id;
+        $result = Application::$app->db->connection->query('
+            DELETE FROM orders_products
+            WHERE order_id = "'.$order_id.'"
+        ');
+        $this->refresh();
+        return $result;
+    }
+
+    public function resetOrderTotalCost ()
+    {
+        $order_id = 1;
+        $result = Application::$app->db->connection->query('
+            UPDATE orders
+            SET total_cost=0 
+            WHERE id="'.$order_id .'"
+        ');
+        $this->refresh();
+        return $result;
+    }
+
     private function getProdQuantity($product_id, $size_id, $color_id)
     {
         $quantity = Application::$app->db->trySql('

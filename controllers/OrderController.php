@@ -46,9 +46,19 @@ class OrderController extends \core\Controller
         die();
     }
 
+    public function actionRemoveAllProdFromOpenOrd ()
+    {
+        if( $_GET['removeAllproducts'] ){
+            $this->order->removeAllProducts();
+            $this->order->resetOrderTotalCost();
+            echo json_encode('true' );
+            die();
+        }
+    }
+
     public function actionShowCartPage()
     {
-        $this->layout = 'EmptyPage';
+        $this->layout = 'CartPage';
         echo $this->render('__cart');
     }
 }

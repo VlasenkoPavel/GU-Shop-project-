@@ -1,4 +1,4 @@
-<table class="cart-table content-wrapper__cart-table">
+<table class="cart-table content-wrapper__cart-table" id="cartTable">
     <tr class="cart-table-row-header">
         <th class="cart-table-row-header__product-details-cell">Product Details</th>
         <th class="cart-table-row-header__product-info"></th>
@@ -8,55 +8,10 @@
         <th class="cart-table-row-header__subtotal-cell">subtotal</th>
         <th class="cart-table-row-header__action-cell">ACTION</th>
     </tr>
-    <tr class="cart-table-row-product">
-        <td class="cart-table-row-product__img-cell"><img class="cart-table-row-product__img" class="cart-table-row-product__img" src="img/prod_img/Cart_prod_1_img.jpg" alt=""></td>
-        <td class="cart-table-row-product__product-name-cell">
-            <p class="cart-table-row-product__product-name">Mango  People  T-shirt</p>
-            Color: <b>Red</b><br>
-            Size: <b>Xll</b></br>
-        </td>
-        <td class="cart-table-row-product__price-cell">$150</td>
-        <td class="cart-table-row-product__quantitys-cell">2</td>
-        <td class="cart-table-row-product__shipping-cell">free</td>
-        <td class="cart-table-row-product__subtotal-cell">$300</td>
-        <td class="cart-table-row-product__action-cell">
-            <i class="fa fa-times-circle fa" aria-hidden="true"></i>
-        </td>
-    </tr>
-    <tr class="cart-table-row-product">
-        <td class="cart-table-row-product__img-cell"><img class="cart-table-row-product__img" src="img/prod_img/Cart_prod_2_img.jpg" alt=""></td>
-        <td class="cart-table-row-product__product-name-cell">
-            <p class="cart-table-row-product__product-name">Mango  People  T-shirt</p>
-            Color: <b>Red</b><br>
-            Size: <b>Xll</b></br>
-        </td>
-        <td class="cart-table-row-product__price-cell">$150</td>
-        <td class="cart-table-row-product__quantitys-cell">2</td>
-        <td class="cart-table-row-product__shipping-cell">free</td>
-        <td class="cart-table-row-product__subtotal-cell">$300</td>
-        <td class="cart-table-row-product__action-cell">
-            <i class="fa fa-times-circle fa" aria-hidden="true"></i>
-        </td>
-    </tr>
-    <tr class="cart-table-row-product">
-        <td class="cart-table-row-product__img-cell"><img class="cart-table-row-product__img" src="img/prod_img/Cart_prod_3_img.jpg" alt=""></td>
-        <td class="cart-table-row-product__product-name-cell">
-            <p class="cart-table-row-product__product-name">Mango  People  T-shirt</p>
-            Color: <b>Red</b><br>
-            Size: <b>Xll</b></br>
-        </td>
-        <td class="cart-table-row-product__price-cell">$150</td>
-        <td class="cart-table-row-product__quantitys-cell">2</td>
-        <td class="cart-table-row-product__shipping-cell">free</td>
-        <td class="cart-table-row-product__subtotal-cell">$300</td>
-        <td class="cart-table-row-product__action-cell">
-            <i class="fa fa-times-circle fa" aria-hidden="true"></i>
-        </td>
-    </tr>
 </table>
 <div class="cart-table__buttons-wrapper">
-    <a href="#" class="button button_sub-menu-cart" role="button" onclick="return false">CLEAR SHOPPING CART</a>
-    <a href="Product.html" class="button button_sub-menu-cart" role="button">CONTINUE sHOPPING</a>
+    <a href="#" id="clearCartButton" class="button button_sub-menu-cart" role="button">CLEAR SHOPPING CART</a>
+<!--    <a href="Product.html" class="button button_sub-menu-cart" role="button">CONTINUE SHOPPING</a>-->
 </div>
 <form action="" class="shipping-form content-wrapper__shipping-form">
     <div class="shipping-form__fieldset shipping-form__fieldset_shipping-adress">
@@ -75,11 +30,11 @@
     <div class="shipping-form__fieldset shipping-form__fieldset_grand-total">
         <div class="shipping-form__sub-total">
             <span>sub-total</span>
-            <span class="shipping-form__sub-total-prise">$900</span>
+            <span id="cartFormSubTotal" class="shipping-form__sub-total-prise">$ 0</span>
         </div>
         <div class="shipping-form__grand-total">
             <span>grand-total</span>
-            <span class="shipping-form__grand-total-prise">$900</span>
+            <span id="cartFormGrandTotal" class="shipping-form__grand-total-prise">$ 0</span>
         </div>
         <a href="Сheckout.html" class="button button_red button_proceed-to-checkout">proceed to checkout</a>
     </div>
