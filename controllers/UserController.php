@@ -85,7 +85,7 @@ class UserController extends \core\Controller
             echo $this->render('__registration');
             die();
         }
-        $this->message = 'login is not free';
+
         echo $this->render('__registration');
         die();
     }
