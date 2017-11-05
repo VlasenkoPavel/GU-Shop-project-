@@ -28,14 +28,14 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `date_time` datetime(3) NOT NULL,
-  `total_cost` decimal(10,2) NOT NULL,
+  `total_cost` decimal(10,2) DEFAULT NULL,
   `status_id` tinyint(2) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_orders_users_idx` (`user_id`),
   KEY `fk_orders_order_statuses_idx` (`status_id`),
   CONSTRAINT `fk_orders_order_statuses` FOREIGN KEY (`status_id`) REFERENCES `order_statuses` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_orders_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,2,'2017-01-02 00:00:00.000',12700.00,1);
+INSERT INTO `orders` VALUES (1,2,'2017-01-02 00:00:00.000',700.00,1),(2,4,'2017-11-05 00:00:00.000',3000.00,1),(3,1,'2017-11-05 00:00:00.000',0.00,1);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-24 17:49:41
+-- Dump completed on 2017-11-06  0:06:26

@@ -42,7 +42,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `login_UNIQUE` (`login`),
   KEY `fk_userst_permissions_idx` (`permission_id`),
   CONSTRAINT `fk_userst_permissions` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,7 +51,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Pavel','Vlasenko','2017-01-01','Russia',117418,'Profsoyuznaya 27 f.36','admin','1234501',1,'psvlasenko@gmail.com','+79775330552',99),(2,'Ivan','Ivanov','2017-01-02','Russia',117418,'Profsoyuznaya 27 f.42','Ivan','1234502',2,'ivan@mail.ru','+79775330552',NULL);
+INSERT INTO `users` VALUES (1,'Pavel','Vlasenko','2017-01-01','Russia',117418,'Profsoyuznaya 27 f.36','Pavel','1234501',1,'psvlasenko@gmail.com','+79775330552',99),(2,'Ivan','Ivanov','2017-01-02','Russia',117418,'Profsoyuznaya 27 f.42','Ivan','1234502',2,'ivan@mail.ru','+79775330552',NULL),(4,'Petr','Petrov','2017-11-05','Russia',117418,'Profsoyuznaya 25 kv 15','Petr','1234503',2,'petrov@mail.ru','+79775330555',0),(5,'Mary','petrova','2017-11-05','Russia',117418,'Profsoyuznaya 25 kv 15','Mary','1234504',2,'mary@mail.ru','+79775330555',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -64,4 +64,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-24 17:49:39
+-- Dump completed on 2017-11-06  0:06:26

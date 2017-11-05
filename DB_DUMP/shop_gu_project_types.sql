@@ -28,8 +28,9 @@ CREATE TABLE `types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(128) COLLATE utf8_bin NOT NULL,
   `type_discount` tinyint(2) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `type_UNIQUE` (`type`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +39,7 @@ CREATE TABLE `types` (
 
 LOCK TABLES `types` WRITE;
 /*!40000 ALTER TABLE `types` DISABLE KEYS */;
-INSERT INTO `types` VALUES (1,'coats',NULL),(2,'demin',NULL),(3,'dresses',NULL),(4,'jackets',NULL),(5,'rompers',NULL),(6,'knits',NULL),(7,'shorts',NULL),(8,'skirts',NULL),(9,'tops',NULL),(10,'pants',NULL),(11,'polo shirts',NULL),(12,'shirts',NULL),(13,'shorts',NULL),(14,'snits',NULL),(15,'sweaters',NULL),(16,'trousers',NULL),(17,'suits',NULL),(18,'tops',NULL);
+INSERT INTO `types` VALUES (1,'coats',NULL),(2,'demin',NULL),(3,'dresses',NULL),(4,'jackets',NULL),(5,'rompers',NULL),(6,'knits',NULL),(7,'shorts',NULL),(8,'skirts',NULL),(9,'tops',NULL),(10,'pants',NULL),(11,'polo shirts',NULL),(12,'shirts',NULL),(13,'snits',NULL),(14,'sweaters',NULL),(15,'trousers',NULL),(16,'suits',NULL);
 /*!40000 ALTER TABLE `types` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-24 17:49:41
+-- Dump completed on 2017-11-06  0:06:26

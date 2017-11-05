@@ -28,7 +28,8 @@ CREATE TABLE `colors` (
   `id` tinyint(2) NOT NULL,
   `color` varchar(45) COLLATE utf8_bin NOT NULL,
   `hex_code` varchar(16) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `color_UNIQUE` (`color`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-24 17:49:40
+-- Dump completed on 2017-11-06  0:06:24

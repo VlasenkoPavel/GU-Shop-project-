@@ -25,10 +25,11 @@ DROP TABLE IF EXISTS `brands`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `brands` (
-  `brand_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `brand` varchar(45) COLLATE utf8_bin NOT NULL,
-  `brand_discount` tinyint(2) DEFAULT NULL,
-  PRIMARY KEY (`brand_id`)
+  `discount` tinyint(2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `brand_UNIQUE` (`brand`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-24 17:49:41
+-- Dump completed on 2017-11-06  0:06:25

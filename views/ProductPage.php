@@ -57,7 +57,9 @@
                     <div class="c-quantity-select">
                         <input class="c-quantity-select__input" name="quantity" type="number" value="1" step="1">
                     </div>
-                    <input type="submit" class="button button_product-choice-button" value="add to cart">
+                    <input type="submit" class="button button_product-choice-button" title="
+                        <?php if ( ! \core\Application::$app->user ) echo ("need registration"); ?>
+                    " value="add to cart">
                 </form>
             </section>
             <aside class="products-section content-wrapper__products-section">

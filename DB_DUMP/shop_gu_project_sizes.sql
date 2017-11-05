@@ -28,7 +28,8 @@ CREATE TABLE `sizes` (
   `id` tinyint(2) NOT NULL AUTO_INCREMENT,
   `size` varchar(8) COLLATE utf8_bin NOT NULL,
   `size_discount` tinyint(2) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `size_UNIQUE` (`size`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-24 17:49:40
+-- Dump completed on 2017-11-06  0:06:24
