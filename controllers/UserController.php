@@ -48,7 +48,8 @@ class UserController extends \core\Controller
         return false;
     }
 
-    public function actionShowAccountPage() {
+    public function actionShowAccountPage()
+    {
         $this->layout = 'EmptyPage';
         $this->pageName = 'Account';
         echo $this->render( '__account', Application::$app->user->getData());
@@ -89,7 +90,8 @@ class UserController extends \core\Controller
         die();
     }
 
-    public function actionExit() {
+    public function actionExit()
+    {
         User::removeCookie();
         Application::$app->user = null;
         header( "Location: $_SERVER[HTTP_REFERER]" );
@@ -108,13 +110,15 @@ class UserController extends \core\Controller
         return null;
     }
 
-    private function renderLogWithMessage( $message ) {
+    private function renderLogWithMessage( $message )
+    {
         $this->pageName = 'Login';
         $this->message = $message;
         echo $this->render( '__login' );
     }
 
-    private function checkLoginIsFree( $login ) {
+    private function checkLoginIsFree( $login )
+    {
         $response = Application::$app->db->trySql('
         SELECT id
         FROM users

@@ -116,7 +116,7 @@ class Catalogue
         return $result;
     }
 
-    public static function addProdInDb($product_name, $type_id, $brand_id, $category_id, $price, $discount, $feature_id)  {
+    public static function AddProdToDb($product_name, $type_id, $brand_id, $category_id, $price, $discount, $feature_id)  {
 
         $sth = Application::$app->db->connection->prepare("
             INSERT INTO products
@@ -131,6 +131,48 @@ class Catalogue
         $sth->bindParam(':price', $price, PDO::PARAM_INT);
         $sth->bindParam(':discount', $discount, PDO::PARAM_INT);
         $sth->bindParam(':feature_id', $feature_id, PDO::PARAM_INT);
+        $sth->execute();
+    }
+
+    public static function AddCategoryToDb($category)  {
+        $sth = Application::$app->db->connection->prepare("
+            INSERT INTO categoryes
+            (category)
+            VALUES (:category)
+        ");
+
+        $sth->bindParam(':category', $category, PDO::PARAM_STR);
+        $sth->execute();
+    }
+
+    public static function AddTypeToDb($type)  {
+        $sth = Application::$app->db->connection->prepare("
+            INSERT INTO types
+            (types.type)
+            VALUES (:typeName)
+        ");
+
+        $sth->bindParam(':typeName', $type, PDO::PARAM_STR);
+        $sth->execute();
+    }
+
+    public static function AddBrandToDb($brand)  {
+        $sth = Application::$app->db->connection->prepare("
+            INSERT INTO brands
+            (brand)
+            VALUES (:brand)
+        ");
+
+        $sth->bindParam(':brand', $brand, PDO::PARAM_STR);
+        $sth->execute();
+    }
+
+    public static function DeleteProductFromDb($productId)  {
+        $sth = Application::$app->db->connection->prepare("
+            DELETE FROM products
+            WHERE id = :product_id 
+        ");
+        $sth->bindParam(':product_id', $productId, PDO::PARAM_INT);
         $sth->execute();
     }
 }

@@ -43,7 +43,7 @@ class AdminController extends \core\Controller
         echo json_encode($id);
     }
 
-    public function actionAddProdInDb()  {
+    public function actionAddProdToDb()  {
         $product_name = $_POST[ 'product_name' ];
         $type_id = + $_POST[ 'type_id' ];
         $brand_id = + $_POST[ 'brand_id' ];
@@ -52,11 +52,35 @@ class AdminController extends \core\Controller
         $discount = $_POST[ 'discount' ] ? (+ $_POST[ 'discount' ]) : null;
         $feature_id = $_POST[ 'feature_id' ] ? + $_POST[ 'feature_id' ]: null;
 
-        Catalogue::addProdInDb($product_name, $type_id, $brand_id, $category_id, $price, $discount, $feature_id);
+        Catalogue::AddProdToDb($product_name, $type_id, $brand_id, $category_id, $price, $discount, $feature_id);
 
         $prodId = Catalogue::getProdIdByName($product_name);
         $prodPageUri = '//localhost/index.php/main/ShowProductPage?product_id=' . $prodId;
         header( "Location: $prodPageUri" );
+    }
+
+    public function actionAddCategoryToDb()  {
+        $category = $_GET[ 'category' ];
+        Catalogue::AddCategoryToDb($category);
+        header( "Location: http://localhost/index.php/Admin/ShowAdminPanel" );
+    }
+
+    public function actionAddTypeToDb()  {
+        $type = $_GET[ 'type' ];
+        Catalogue::AddTypeToDb($type);
+        header( "Location: http://localhost/index.php/Admin/ShowAdminPanel" );
+    }
+
+    public function actionAddBrandToDb()  {
+        $brand = $_GET[ 'brand' ];
+        Catalogue::AddBrandToDb($brand);
+        header( "Location: http://localhost/index.php/Admin/ShowAdminPanel" );
+    }
+
+    public function actionDeleteProductFromDb()  {
+        $productId = + $_GET[ 'product_id' ];
+        Catalogue::DeleteProductFromDb($productId);
+        header( "Location: http://localhost/index.php/Admin/ShowAdminPanel" );
     }
 
     public function actionAddProdImg()  {
