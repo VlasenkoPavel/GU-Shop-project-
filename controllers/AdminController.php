@@ -8,10 +8,14 @@ class AdminController extends \core\Controller
     protected $types;
     protected $categoryes;
     protected $brands;
+    protected $pageName;
+    protected $pageHeadName;
 
     public function __construct()
     {
-        $this->layout = 'AdminPage';
+        $this->layout = 'EmptyPage';
+        $this->pageName = 'Admin Panel';
+        $this->pageHeadName = '__headAdminPanel';
         $this->types = Catalogue::getTypes();
         $this->categoryes = Catalogue::getCategoryes();
         $this->brands = Catalogue::getBrands();
@@ -52,7 +56,6 @@ class AdminController extends \core\Controller
 
         $prodId = Catalogue::getProdIdByName($product_name);
         $prodPageUri = '//localhost/index.php/main/ShowProductPage?product_id=' . $prodId;
-//        var_dump($type_id);
         header( "Location: $prodPageUri" );
     }
 

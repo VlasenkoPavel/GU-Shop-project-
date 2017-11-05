@@ -41,19 +41,6 @@
                             <option class="c-color-select__sub-menu-item-link_green" value="green">green</option>
                             <option class="c-color-select__sub-menu-item-link_blue" value="blue">blue</option>
                         </select>
-<!--                        <ul class="l-drop-menu">-->
-<!--                            <li class="l-drop-menu__item_color">-->
-<!--                                <a href="#" class="c-color-select__item-link" onclick="return false">red</a>-->
-<!--                                <ul class="l-drop-menu__sub-menu l-drop-menu__sub-menu_color">-->
-<!--                                    <li class="l-drop-menu__sub-menu-item">-->
-<!--                                        <a href="#" class="c-color-select__sub-menu-item-link c-color-select__sub-menu-item-link_green" onclick="return false">green</a>-->
-<!--                                    </li>-->
-<!--                                    <li class="l-drop-menu__sub-menu-item">-->
-<!--                                        <a href="#" class="c-color-select__sub-menu-item-link c-color-select__sub-menu-item-link_blue" onclick="return false">blue</a>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
-<!--                        </ul>-->
                     </div>
                     <div class="c-size-select">
                         <select class="c-size-select__item-link" name="size" id="">
@@ -65,28 +52,7 @@
                             <option class="c-size-select__sub-menu-item-link" value="XS">XS</option>
                             <option class="c-size-select__sub-menu-item-link" value="XXS">XXS</option>
                         </select>
-<!--                        <ul class="l-drop-menu">-->
-<!--                            <li class="l-drop-menu__item_size">-->
-<!--                                <a href="#" class="c-size-select__item-link" onclick="return false">XXL</a>-->
-<!--                                <ul class="l-drop-menu__sub-menu l-drop-menu__sub-menu_size">-->
-<!--                                    <li class="l-drop-menu__sub-menu-item">-->
-<!--                                        <a href="#" class="c-size-select__sub-menu-item-link" onclick="return false">XL</a>-->
-<!--                                    </li>-->
-<!--                                    <li class="l-drop-menu__sub-menu-item">-->
-<!--                                        <a href="#" class="c-size-select__sub-menu-item-link" onclick="return false">L</a>-->
-<!--                                    </li>-->
-<!--                                    <li class="l-drop-menu__sub-menu-item">-->
-<!--                                        <a href="#" class="c-size-select__sub-menu-item-link" onclick="return false">M</a>-->
-<!--                                    </li>-->
-<!--                                    <li class="l-drop-menu__sub-menu-item">-->
-<!--                                        <a href="#" class="c-size-select__sub-menu-item-link" onclick="return false">s</a>-->
-<!--                                    </li>-->
-<!--                                    <li class="l-drop-menu__sub-menu-item">-->
-<!--                                        <a href="#" class="c-size-select__sub-menu-item-link" onclick="return false">xs</a>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
-<!--                        </ul>-->
+
                     </div>
                     <div class="c-quantity-select">
                         <input class="c-quantity-select__input" name="quantity" type="number" value="1" step="1">

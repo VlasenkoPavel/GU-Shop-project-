@@ -10,7 +10,7 @@
                 <li><a href="http://localhost/index.php/User/Registration" class="header-sub-menu__item-link">Registration</a></li>
             <?php else: if ( core\Application::$app->user->getPermission() == "user" ): ?>
 <!--            <li class="header-sub-menu__item-heading">Account</li>-->
-            <li><a href="#" class="header-sub-menu__item-link">Account</a></li>
+            <li><a href="http://localhost/index.php/User/ShowAccountPage" class="header-sub-menu__item-link">Account</a></li>
             <li><a href="http://localhost/index.php/User/Exit" class="header-sub-menu__item-link">Exit</a></li>
             <?php
                 endif;

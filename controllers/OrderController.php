@@ -4,6 +4,7 @@ namespace controllers;
 use components\Order;
 use core\Application;
 use components\Product;
+use \PDO;
 
 class OrderController extends \core\Controller
 {
@@ -13,7 +14,18 @@ class OrderController extends \core\Controller
     public function __construct()
     {
         $user_id = Application::$app->user->getId();
-        if($user_id) {
+
+        $orderQuery= Application::$app->db->trySql('
+            SELECT id
+            FROM orders
+            WHERE user_id = "' . $user_id  . '"');
+        $orderId = $orderQuery[0]['id'];
+
+        if ($orderId) {
+            $this->order = new Order($user_id);
+        } else {
+            $date_time = date('Y-m-d');
+            $this->createNewOpenOrder($user_id, $date_time);
             $this->order = new Order($user_id);
         }
     }
@@ -60,5 +72,16 @@ class OrderController extends \core\Controller
     {
         $this->layout = 'CartPage';
         echo $this->render('__cart');
+    }
+
+    private function createNewOpenOrder($user_id, $date_time) {
+        $sth = Application::$app->db->connection->prepare("
+                INSERT INTO orders
+                (user_id, date_time, total_cost, status_id)
+                VALUES (:user_id, :date_time,0 ,1)
+            ");
+        $sth->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $sth->bindParam(':date_time', $date_time, PDO::PARAM_STR);
+        $sth->execute();
     }
 }

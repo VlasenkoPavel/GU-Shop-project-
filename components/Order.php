@@ -26,7 +26,11 @@ class Order
             $this->order_id = $order['id'];
             $this->total_cost =  $order['total_cost'];
             $this->products = $this->getProducts();
+            return true;
+        } else {
+            $this->createNewOpenOrder($this->user_id);
         }
+
     }
 
     private function getProducts() {

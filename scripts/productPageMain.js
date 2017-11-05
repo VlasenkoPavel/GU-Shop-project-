@@ -12,7 +12,6 @@ $(document).ready(function () {
         var formData =[];
 
         formData = $(this).serializeArray();
-        console.log (formData);
 
         $.get({
             url: 'http://localhost/index.php/Order/AddProdToOpenOrd',
@@ -26,7 +25,7 @@ $(document).ready(function () {
                 'quantity': formData[3].value
             },
             success: function (data) {
-                // console.log(data);
+                console.log(data);
                 cart.refresh();
             },
             error: function (error) {
