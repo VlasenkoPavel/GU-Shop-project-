@@ -12,7 +12,7 @@
 <div class="container">
     <?php require_once  VIEWS_DIR . '__header.php' ?>
     <main class="main">
-        <?php require_once  VIEWS_DIR . '__new-arrivals.php' ?>
+        <?php require_once VIEWS_DIR . '__page-heading.php'; ?>
         <div class="stretchable-wrapper_new-arrivals-slider">
             <div class="content-wrapper">
                 <div class="single-page-slider">

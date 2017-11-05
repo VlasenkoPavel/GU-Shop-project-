@@ -4,7 +4,7 @@ class AjaxProductsController
     constructor (pageNumber)
     {
         const VISIBLE_PAGE_NUMBER = 4;
-        const UNITS_ON_PAGE = 3;
+        const UNITS_ON_PAGE = 6;
 
         const getGETparams = () =>
         {
@@ -30,7 +30,7 @@ class AjaxProductsController
         const renderData = () =>
         {
             $.ajax({
-                url: "http://localhost/index.php/main/AjaxGetProducts",
+                url: "http://localhost/index.php/Main/AjaxGetProducts",
                 type: "POST",
                 data: {
                     'type': getPagams.type,
@@ -48,10 +48,10 @@ class AjaxProductsController
                         return false;
                     }
 
-                    let data = JSON.parse(response, true);
+                    let products = JSON.parse(response, true);
                     // console.log(data);
 
-                    let visualiser = new ajaxPageVisualizer (data, UNITS_ON_PAGE, VISIBLE_PAGE_NUMBER);
+                    let visualiser = new ajaxPageVisualizer (products, UNITS_ON_PAGE, VISIBLE_PAGE_NUMBER);
                     visualiser.render();
                     visualiser.initLinks();
                 }
@@ -72,8 +72,8 @@ class ajaxPageVisualizer
         this.dataArr = dataArr['products'];
         this.pageNumber = Math.ceil(this.count / unitsOnPage);
         this.visiblePageNumber = visiblePageNumber;
-        // console.log(this.count );
-        // console.log(this.dataArr);
+        console.log(dataArr);
+        console.log(this.dataArr);
         // console.log(this.pageNumber);
         // console.log(this.visiblePageNumber);
 
@@ -104,7 +104,6 @@ class ajaxPageVisualizer
                 for (let i = 1; i < visiblePageNumber; i++) {
                     htmlCode += renderPageButton(i);
                 }
-                // console.log(htmlCode);
 
                 htmlCode += '<div class="products-paging__inner-item-wrapper">'
                     + '<a href="#" role="button" class="products-paging__sub-wrapper-caller" onclick="return false;">...</a>'
@@ -124,7 +123,6 @@ class ajaxPageVisualizer
                 }
             }
             return htmlCode;
-            // console.log (htmlCode);
         };
 
         const renderUnit = (unit) =>
@@ -145,12 +143,8 @@ class ajaxPageVisualizer
         const initLinks = () =>
         {
             let pageLinkArr = document.getElementsByClassName('products-paging__item');
-            console.log (pageLinkArr);
-            console.log (pageLinkArr[0]);
-            console.log (pageLinkArr.length);
             for ( let i = 0; i <= pageLinkArr.length - 1; i++ ) {
                 let elem = pageLinkArr[ i ];
-                console.log (elem);
                 elem.addEventListener("click", function ()
                     {
                         event.preventDefault();
@@ -172,7 +166,6 @@ class ajaxPageVisualizer
 
             let dataHTML = renderData(this.dataArr );
             let pagingHtml = renderPaging(this.pageNumber, this.visiblePageNumber);
-            // console.log (pagingHtml);
 
             data.innerHTML = dataHTML;
             paging.innerHTML = pagingHtml;
@@ -182,23 +175,3 @@ class ajaxPageVisualizer
         this.initLinks = initLinks;
     }
 }
-
-// function changeClassName(name, newName, num)
-// {
-//     let elem = document.getElementsByClassName(name)[num];
-//     elem.className = newName;
-//     // console.log(newName);
-// }
-//
-// function changePage()
-// {
-//     let page = document.querySelector('[class*="button_paging-red"]');
-//     if (page) {
-//         page.className = 'button button_paging';
-//     }
-//     let newPage = document.activeElement;
-//     if (newPage) {
-//         newPage.className = 'button button_paging-red';
-//         // console.log(newPage);
-//     }
-// }

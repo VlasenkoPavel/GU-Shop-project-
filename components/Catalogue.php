@@ -47,7 +47,7 @@ class Catalogue
             LIMIT :minNum, :limit"
             , $type, $category, $min,  $limit);
 
-        $prodCount = Application::$app->db->getCountDataByCategoryAndType('jackets', 'men');
+        $prodCount = Application::$app->db->getCountDataByCategoryAndType($type, $category);
 
         if( is_int( + $prodCount ) && is_array( $products ) ){
             $result = [

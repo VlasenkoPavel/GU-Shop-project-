@@ -27,34 +27,23 @@ class MainController extends \core\Controller
         $productId = $_GET['product_id'];
         $this->product = new Product($productId);
         $products = $this->catalogue->getNewProducts();
+        $this->pageName = 'Catalogue';
         $this->layout = 'ProductPage';
         echo $this->render('__products-wrapper', $products);
     }
 
-//    public function actionShowMenJackets()
-//    {
-//        $this->layout = 'Catalogue';
-//        echo $this->render('__products-wrapper_narrow');
-//    }
-
     public function actionShowCatalogue()
     {
+        $this->pageName = 'Catalogue';
         $this->layout = 'Catalogue';
         echo $this->render('__products-wrapper_narrow');
-    }
-
-    public function actionShowWomenCoats()
-    {
-        $this->layout = 'Catalogue';
-        $products = $this->catalogue->getWomenCoats();
-        echo $this->render('__products-wrapper_narrow', $products);
     }
 
     public function actionAjaxGetProducts()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $type =  isset($_POST['type']) ? $_POST['type'] : 'coats';
-            $category = isset($_POST['category']) ? $_POST['category'] : 'women';
+            $type =  isset($_POST['type']) ? $_POST['type'] : 'jackets';
+            $category = isset($_POST['category']) ? $_POST['category'] : 'men';
             $min = isset($_POST['min']) ? + $_POST['min'] : 0;
             $limit = isset($_POST['limit']) ? + $_POST['limit'] : 6;
             $products = $this->catalogue->getProductsByTypeAndCategory($type, $category,$min, $limit);
