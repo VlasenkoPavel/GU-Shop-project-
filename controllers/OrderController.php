@@ -10,6 +10,8 @@ class OrderController extends \core\Controller
 {
     private $order;
     private $user_id;
+    protected $pageName;
+    protected $pageHeadName;
 
     public function __construct()
     {
@@ -70,7 +72,9 @@ class OrderController extends \core\Controller
 
     public function actionShowCartPage()
     {
-        $this->layout = 'CartPage';
+        $this->pageName = "Shoping Cart";
+        $this->pageHeadName = '__headCart';
+        $this->layout = 'EmptyPage';
         echo $this->render('__cart');
     }
 
