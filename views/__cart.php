@@ -16,9 +16,9 @@
 <form action="" class="shipping-form content-wrapper__shipping-form">
     <div class="shipping-form__fieldset shipping-form__fieldset_shipping-adress">
         <h3 class="shipping-form__fieldset-heading">Shipping Adress</h3>
-        <input class="input-fild input-fild_shipping-form" type="text" name="">
-        <input class="input-fild input-fild_shipping-form" type="text" name="">
-        <input class="input-fild input-fild_shipping-form" type="number" name="">
+        <input class="input-fild input-fild_shipping-form" type="text" name="" value="<?= $this->params['country'] ?>">
+        <input class="input-fild input-fild_shipping-form" type="number" name="" value="<?= $this->params['zip_code'] ?>">
+        <input class="input-fild input-fild_shipping-form" type="text" name="" value="<?= $this->params['address'] ?>">
         <a href="#" class="button button_sub-menu-cart button_sub-menu-cart-small" role="button">get a quote</a>
     </div>
     <div class="shipping-form__fieldset shipping-form__fieldset_coupon-discount">

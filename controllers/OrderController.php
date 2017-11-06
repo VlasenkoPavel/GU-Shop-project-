@@ -75,7 +75,7 @@ class OrderController extends \core\Controller
         $this->pageName = "Shoping Cart";
         $this->pageHeadName = '__headCart';
         $this->layout = 'EmptyPage';
-        echo $this->render('__cart');
+        echo $this->render('__cart', Application::$app->user->getData());
     }
 
     private function createNewOpenOrder($user_id, $date_time) {
